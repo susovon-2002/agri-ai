@@ -1749,6 +1749,10 @@ if app_mode == "🍃 Single Leaf Diagnosis":
                             if desc_key in payload and payload.get(desc_key):
                                 st.caption(payload[desc_key])
 
+            else:
+                st.info("Advanced computer-vision observations are unavailable for this analysis.")
+
+            if adv:
                 # Reuse the real pipeline interpretation when available, otherwise generate it once.
                 if not interpretation:
                     interpretation = generate_advanced_interpretation(
@@ -1792,6 +1796,8 @@ if app_mode == "🍃 Single Leaf Diagnosis":
                     st.write(interpretation.get("farmer_summary", "The uploaded leaf shows a pattern compatible with the predicted disease class. If conditions remain favorable, nearby plants should be checked for similar symptoms."))
 
                     st.caption(f"Observation reliability: {interpretation.get('observation_reliability', 'MODERATE')}")
+            else:
+                st.info("Advanced disease-specific interpretation is unavailable because no advanced observation was produced.")
 
 
             # ====================================================
