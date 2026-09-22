@@ -419,6 +419,92 @@ def generate_farmer_report(
     )
 
 
+def build_graphical_analytics_payload(result):
+    """Return the actual analysis payload used by Graphical Analytics.
+
+    The page must consume the same stored result produced by the image-analysis
+    pipeline. Some richer measurements are stored on the parent result (for example
+    infected_regions and morphology_regions), while the disease-specific
+    interpretation and advanced observation live in the dedicated sub-dictionaries.
+    We map those existing values directly instead of recomputing or fabricating
+    placeholder metrics.
+    """
+    payload = result or {}
+    adv = payload.get("advanced_observation") or {}
+    interpretation = payload.get("advanced_interpretation") or {}
+
+    if not interpretation and adv:
+        interpretation = generate_advanced_interpretation(
+            prediction=payload.get("prediction", "Unknown"),
+            confidence=float(payload.get("confidence", 0.0) or 0.0),
+            severity=payload.get("severity", "Unknown"),
+            affected_area=payload.get(
+                "affected_leaf",
+                (adv.get("affected_area_geometry") or {}).get("largest_component_pct", 0.0),
+            ),
+            advanced_observation=adv,
+        )
+
+    infected_regions = payload.get("infected_regions") or []
+    morphology_regions = payload.get("morphology_regions") or []
+    first_region = infected_regions[0] if infected_regions else {}
+    first_morph = morphology_regions[0] if morphology_regions else {}
+
+    lesion_geometry = adv.get("affected_area_geometry") or {}
+    if not lesion_geometry and first_region:
+        lesion_geometry = {
+            "meaningful_abnormal_regions": len(infected_regions),
+            "largest_component_pct": first_region.get("area_percent_of_leaf"),
+        }
+
+    connectivity_data = adv.get("connectivity") or {}
+    if not connectivity_data and first_region:
+        connectivity_data = {
+            "isolated_regions": 0,
+            "merged_regions": max(len(infected_regions) - 1, 0),
+        }
+
+    morphology_data = adv.get("morphology") or {}
+    if not morphology_data and first_morph:
+        morphology_data = {
+            "lesion_count": adv.get("morphology", {}).get("lesion_count") if adv.get("morphology") else None,
+            "mean_lesion_area": first_morph.get("area_pixels"),
+            "largest_lesion_area": first_morph.get("area_pixels"),
+            "mean_circularity": first_morph.get("circularity"),
+            "mean_solidity": first_morph.get("solidity"),
+            "largest_region_percentage": first_morph.get("area_percent_leaf"),
+        }
+
+    color_data = adv.get("color") or {}
+    if not color_data and first_morph:
+        color_data = {
+            "mean_rgb": first_morph.get("mean_rgb"),
+            "mean_hsv": first_morph.get("mean_hsv"),
+            "std_rgb": first_morph.get("std_rgb"),
+            "contrast_to_healthy": None,
+        }
+
+    texture_data = adv.get("texture") or {}
+    if not texture_data and first_morph:
+        texture_data = {
+            "texture_variation": first_morph.get("texture_std"),
+            "edge_density": None,
+            "contrast": first_morph.get("local_variance"),
+        }
+
+    return {
+        "adv": adv,
+        "interpretation": interpretation,
+        "lesion_geometry": lesion_geometry,
+        "connectivity_data": connectivity_data,
+        "morphology_data": morphology_data,
+        "color_data": color_data,
+        "texture_data": texture_data,
+        "infected_regions": infected_regions,
+        "morphology_regions": morphology_regions,
+    }
+
+
 def prepare_display_report(raw_report: str) -> str:
     """Create a Streamlit-only presentation copy without modifying the original report data."""
     if not raw_report:
@@ -1130,21 +1216,9 @@ if app_mode == "🍃 Single Leaf Diagnosis":
                 "analysis_image"
             )
 
-            adv = result.get("advanced_observation") or {}
-            interpretation = result.get("advanced_interpretation") or {}
-            if not interpretation and adv:
-                interpretation = generate_advanced_interpretation(
-                    prediction=result.get("prediction", "Unknown"),
-                    confidence=result.get("confidence", 0.0),
-                    severity=result.get("severity", "Unknown"),
-                    affected_area=result.get(
-                        "affected_leaf",
-                        adv.get("affected_area_geometry", {}).get(
-                            "largest_component_pct", 0.0
-                        ),
-                    ),
-                    advanced_observation=adv,
-                )
+            graph_payload = build_graphical_analytics_payload(result)
+            adv = graph_payload.get("adv") or {}
+            interpretation = graph_payload.get("interpretation") or {}
 
             # ====================================================
             # UNIFIED HIGH-DENSITY DASHBOARD (EXACT VISUAL MATCH)
@@ -1767,9 +1841,9 @@ if app_mode == "🍃 Single Leaf Diagnosis":
                     "Severity and observation reliability are categorical labels, not probabilities."
                 )
 
-                lesion_geometry = adv.get("affected_area_geometry", {}) or {}
-                connectivity_data = adv.get("connectivity", {}) or {}
-                morphology_data = adv.get("morphology", {}) or {}
+                lesion_geometry = graph_payload.get("lesion_geometry") or {}
+                connectivity_data = graph_payload.get("connectivity_data") or {}
+                morphology_data = graph_payload.get("morphology_data") or {}
                 lesion_rows = []
                 lesion_metrics = [
                     ("Lesion count", morphology_data.get("lesion_count")),
@@ -1806,8 +1880,8 @@ if app_mode == "🍃 Single Leaf Diagnosis":
                     st.info("Graphical analysis unavailable for morphology measurements.")
                 st.caption("Only morphology values returned by the observation engine are shown.")
 
-                color_data = adv.get("color", {}) or {}
-                texture_data = adv.get("texture", {}) or {}
+                color_data = graph_payload.get("color_data") or {}
+                texture_data = graph_payload.get("texture_data") or {}
                 characteristic_rows = []
                 mean_rgb = color_data.get("mean_rgb")
                 if isinstance(mean_rgb, (list, tuple)) and len(mean_rgb) >= 3:

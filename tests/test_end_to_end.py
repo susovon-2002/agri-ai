@@ -276,6 +276,22 @@ def test_report_consistency_and_pdf_pipeline():
     assert result["advanced_interpretation"]
 
 
+def test_graphical_analytics_uses_real_advanced_observation_fields():
+    result = analyze_image(_make_leaf_image("graphical_analytics"), MODEL)
+    adv = result["advanced_observation"]
+    interpretation = result["advanced_interpretation"]
+
+    assert interpretation.get("observation_reliability")
+    assert adv.get("affected_area_geometry")
+    assert adv.get("morphology")
+    assert adv.get("connectivity")
+    assert adv.get("color")
+    assert adv.get("texture")
+    assert adv["morphology"].get("lesion_count") is not None
+    assert adv["color"].get("mean_rgb") is not None
+    assert adv["texture"].get("contrast") is not None
+
+
 def test_performance_and_memory_smoke():
     start = __import__("time").perf_counter()
     for idx in range(10):
