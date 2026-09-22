@@ -2,6 +2,7 @@ from pathlib import Path
 import base64
 import io
 import json
+import time
 import zipfile
 
 import cv2
@@ -210,6 +211,131 @@ st.markdown(
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+
+    .ai-scanner {
+        width: min(100%, 760px);
+        margin: 8px auto 18px;
+        padding: 14px;
+        border: 1px solid rgba(45, 212, 191, 0.55);
+        border-radius: 18px;
+        background: linear-gradient(145deg, #0b1720, #102a2e 58%, #10243b);
+        box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.18), 0 0 28px rgba(16, 185, 129, 0.18), 0 0 52px rgba(37, 99, 235, 0.12);
+        color: #dffcf4;
+        font-family: ui-sans-serif, system-ui, sans-serif;
+    }
+    .ai-scanner-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        padding: 0 2px 10px;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.3px;
+    }
+    .ai-scanner-status {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: #86efac;
+    }
+    .ai-scanner-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #34d399;
+        box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7);
+        animation: scanner-pulse 1.5s ease-out infinite;
+    }
+    .ai-scanner-viewport {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 16 / 10;
+        min-height: 230px;
+        border: 1px solid rgba(167, 243, 208, 0.35);
+        border-radius: 12px;
+        background: #081218;
+    }
+    .ai-scanner-viewport img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: contain;
+    }
+    .ai-scanner-grid {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image: linear-gradient(rgba(125, 211, 252, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(125, 211, 252, 0.12) 1px, transparent 1px);
+        background-size: 48px 48px;
+    }
+    .ai-scanner-line {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 2px;
+        background: #5eead4;
+        box-shadow: 0 0 8px 2px rgba(45, 212, 191, 0.9), 0 0 22px 4px rgba(59, 130, 246, 0.45);
+        animation: scanner-sweep 2.8s ease-in-out infinite;
+    }
+    .ai-scanner-corner {
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        border-color: #a7f3d0;
+        border-style: solid;
+        opacity: 0.9;
+    }
+    .ai-scanner-corner.tl { top: 12px; left: 12px; border-width: 2px 0 0 2px; }
+    .ai-scanner-corner.tr { top: 12px; right: 12px; border-width: 2px 2px 0 0; }
+    .ai-scanner-corner.bl { bottom: 12px; left: 12px; border-width: 0 0 2px 2px; }
+    .ai-scanner-corner.br { right: 12px; bottom: 12px; border-width: 0 2px 2px 0; }
+    .ai-scanner-copy {
+        padding: 13px 2px 1px;
+    }
+    .ai-scanner-title {
+        margin: 0;
+        color: #f0fdfa;
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 0.2px;
+    }
+    .ai-scanner-subtitle {
+        margin: 4px 0 11px;
+        color: #a7c9ca;
+        font-size: 12px;
+        line-height: 1.45;
+    }
+    .ai-scanner-stages {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 14px;
+        margin: 0;
+        padding: 0;
+        color: #c5e8e0;
+        font-size: 11px;
+        line-height: 1.5;
+    }
+    .ai-scanner-stages span { white-space: nowrap; }
+    .ai-scanner-stages .active { color: #7dd3fc; }
+    @keyframes scanner-sweep {
+        0%, 8% { transform: translateY(0); opacity: 0.35; }
+        48% { opacity: 1; }
+        92%, 100% { transform: translateY(calc(100% - 2px)); opacity: 0.35; }
+    }
+    @keyframes scanner-pulse {
+        0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); }
+        70% { box-shadow: 0 0 0 8px rgba(52, 211, 153, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+    }
+    @media (max-width: 640px) {
+        .ai-scanner { padding: 10px; border-radius: 14px; }
+        .ai-scanner-viewport { min-height: 190px; }
+        .ai-scanner-head { font-size: 9px; letter-spacing: 0.9px; }
+        .ai-scanner-title { font-size: 16px; }
+        .ai-scanner-stages { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 8px; font-size: 10px; }
     }
 
     </style>
@@ -779,8 +905,8 @@ with st.sidebar:
         st.markdown("**🌱 Region Analysis**")
         st.caption("Leaf segmentation + fusion")
 
-        st.markdown("**🤖 Language Model**")
-        st.caption("Qwen2.5-VL 3B")
+        st.markdown("**🤖 AI Report**")
+        st.caption("Farmer-Friendly AI Report")
 
         st.divider()
         st.info("Upload a leaf image to start single-leaf analysis.")
@@ -889,7 +1015,8 @@ if app_mode == "🍃 Single Leaf Diagnosis":
             900
         )
 
-        st.image(
+        image_preview = st.empty()
+        image_preview.image(
             image,
             caption="Uploaded Image",
             width=preview_width
@@ -915,8 +1042,44 @@ if app_mode == "🍃 Single Leaf Diagnosis":
 
         if analyze_button:
 
+            scan_started_at = time.perf_counter()
+            image_buffer = io.BytesIO()
+            image.save(image_buffer, format="JPEG", quality=92)
+            image_data = base64.b64encode(image_buffer.getvalue()).decode("ascii")
+            image_preview.markdown(
+                f"""
+                <div class="ai-scanner" role="status" aria-label="AI leaf analysis in progress">
+                  <div class="ai-scanner-head">
+                    <span class="ai-scanner-status"><span class="ai-scanner-dot"></span>SCANNING</span>
+                    <span>AI LEAF ANALYSIS</span>
+                  </div>
+                  <div class="ai-scanner-viewport">
+                    <img src="data:image/jpeg;base64,{image_data}" alt="Uploaded leaf image being analyzed">
+                    <div class="ai-scanner-grid"></div>
+                    <div class="ai-scanner-line"></div>
+                    <span class="ai-scanner-corner tl"></span>
+                    <span class="ai-scanner-corner tr"></span>
+                    <span class="ai-scanner-corner bl"></span>
+                    <span class="ai-scanner-corner br"></span>
+                  </div>
+                  <div class="ai-scanner-copy">
+                    <p class="ai-scanner-title">Analyzing Leaf Image</p>
+                    <p class="ai-scanner-subtitle">AI is carefully analyzing your plant leaf<br>for signs of disease...</p>
+                    <div class="ai-scanner-stages">
+                      <span>✓ Scanning image</span>
+                      <span>✓ Analyzing leaf structure</span>
+                      <span>✓ Detecting affected regions</span>
+                      <span class="active">→ Running AI classification</span>
+                      <span>○ Preparing detailed results</span>
+                    </div>
+                  </div>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+
             with st.spinner(
-                "Running AgriVision AI..."
+                "Running AI analysis..."
             ):
 
                 model = load_model()
@@ -925,6 +1088,12 @@ if app_mode == "🍃 Single Leaf Diagnosis":
                     image,
                     model
                 )
+
+            remaining_scan_time = 10.0 - (time.perf_counter() - scan_started_at)
+            if remaining_scan_time > 0:
+                time.sleep(remaining_scan_time)
+
+            image_preview.empty()
 
             st.session_state[
                 "analysis_result"
@@ -1463,7 +1632,7 @@ if app_mode == "🍃 Single Leaf Diagnosis":
             if report_button:
 
                 with st.spinner(
-                    "Qwen2.5-VL is preparing the farmer report..."
+                    "AI is preparing the farmer report..."
                 ):
 
                     try:
@@ -1482,7 +1651,7 @@ if app_mode == "🍃 Single Leaf Diagnosis":
                     except Exception as e:
 
                         st.error(
-                            f"Qwen2.5-VL error: {e}"
+                            f"AI report error: {e}"
                         )
 
 
@@ -1556,7 +1725,7 @@ if app_mode == "🍃 Single Leaf Diagnosis":
                         "ResNet18",
 
                     "language_model":
-                        "Qwen2.5-VL 3B",
+                        "Farmer-Friendly AI Report",
 
                     "prediction":
                         result["prediction"],
@@ -1989,7 +2158,7 @@ st.markdown(
     <div class="footer">
     🌿 AgriVision AI &nbsp;|&nbsp;
     ResNet18 + Grad-CAM + Leaf Segmentation +
-    Qwen2.5-VL
+    AI Farmer Report
     </div>
     """,
     unsafe_allow_html=True

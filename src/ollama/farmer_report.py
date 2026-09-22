@@ -112,68 +112,156 @@ def encode_image(image_path):
 # QWEN REPORT FUNCTION
 # ============================================================
 
+def _fallback_farmer_report(
+    result,
+    reason="Ollama is not available."
+):
+
+    disease_name = result.get(
+        "predicted_class",
+        "Unknown condition"
+    )
+
+    confidence = result.get(
+        "confidence_percent",
+        0
+    )
+
+    affected = result.get(
+        "affected_leaf_percent",
+        0
+    )
+
+    severity = result.get(
+        "severity",
+        "Unknown"
+    )
+
+    disease_name = DISEASE_INFO.get(
+        disease_name,
+        disease_name
+    )
+
+    return f"""
+## 🌿 AgriVision AI — Farmer Report
+
+### 1. Crop / Plant
+
+**{disease_name}**
+
+### 2. Detected Condition
+
+**{disease_name}**
+
+The condition above was produced by the AgriVision AI computer-vision model.
+
+### 3. Model Confidence
+
+**{confidence:.2f}%**
+
+### 4. Severity
+
+**{severity}**
+
+### 5. What the Result Means
+
+The computer-vision model identified visual patterns in the uploaded leaf image that are associated with the detected condition.
+
+The estimated affected-leaf percentage is a model-derived visual estimate.
+
+**Estimated affected leaf area: {affected:.2f}%**
+
+### 6. Visible / Relevant Symptoms
+
+The uploaded image contains visual features associated with the predicted condition.
+
+Image-based AI analysis cannot by itself provide laboratory confirmation.
+
+### 7. General Management Guidance
+
+- Inspect the affected plant and nearby plants regularly.
+- Maintain good crop and field hygiene.
+- Remove or manage visibly affected plant material according to local agricultural guidance.
+- Monitor the plant for changes over time.
+- Consult a local agricultural expert or plant pathologist for treatment decisions.
+
+### 8. Prevention
+
+- Regularly inspect leaves for new symptoms.
+- Maintain suitable crop hygiene.
+- Avoid unnecessary movement of potentially affected plant material.
+- Follow locally recommended disease-prevention practices.
+
+### 9. Important Note
+
+This is an AI-based image analysis result.
+
+It is **not a laboratory diagnosis**.
+
+The affected-leaf percentage is a **model-derived visual estimate**.
+
+Treatment decisions should be made with appropriate local agricultural guidance.
+
+---
+
+*Qwen2.5-VL was unavailable in the current environment, so AgriVision AI generated this built-in report from the computer-vision result.*
+"""
+
+
 def generate_report(
     result
 ):
 
-    image_path = Path(
-        result["image"]
-    )
+    try:
 
-    image_base64 = encode_image(
-        image_path
-    )
+        image_path = Path(
+            result["image"]
+        )
 
-    predicted_class = result[
-        "predicted_class"
-    ]
+        image_base64 = encode_image(
+            image_path
+        )
 
-    disease_name = DISEASE_INFO.get(
-        predicted_class,
-        predicted_class
-    )
+        predicted_class = result[
+            "predicted_class"
+        ]
 
-    confidence = result[
-        "confidence_percent"
-    ]
-
-    affected = result[
-        "affected_leaf_percent"
-    ]
-
-    severity = result[
-        "severity"
-    ]
-
-
-    # --------------------------------------------------------
-    # Structured model information
-    # --------------------------------------------------------
-
-    structured_data = {
-
-        "crop_condition":
-            disease_name,
-
-        "model_prediction":
+        disease_name = DISEASE_INFO.get(
             predicted_class,
+            predicted_class
+        )
 
-        "confidence_percent":
-            confidence,
+        confidence = result[
+            "confidence_percent"
+        ]
 
-        "affected_leaf_region_percent":
-            affected,
+        affected = result[
+            "affected_leaf_percent"
+        ]
 
-        "severity":
-            severity
-    }
+        severity = result[
+            "severity"
+        ]
 
+        structured_data = {
 
-    # --------------------------------------------------------
-    # Prompt
-    # --------------------------------------------------------
+            "crop_condition":
+                disease_name,
 
-    prompt = f"""
+            "model_prediction":
+                predicted_class,
+
+            "confidence_percent":
+                confidence,
+
+            "affected_leaf_region_percent":
+                affected,
+
+            "severity":
+                severity
+        }
+
+        prompt = f"""
 You are the AgriVision AI agricultural explanation assistant.
 
 The computer-vision model has already made the disease prediction.
@@ -209,58 +297,73 @@ Rules:
 - Keep the report practical and concise.
 """
 
+        payload = {
 
-    # --------------------------------------------------------
-    # Ollama request
-    # --------------------------------------------------------
+            "model":
+                MODEL,
 
-    payload = {
+            "messages": [
 
-        "model": MODEL,
+                {
+                    "role": "user",
 
-        "messages": [
+                    "content":
+                        prompt,
 
-            {
-                "role": "user",
+                    "images": [
+                        image_base64
+                    ]
+                }
 
-                "content": prompt,
+            ],
 
-                "images": [
-                    image_base64
-                ]
+            "stream":
+                False,
+
+            "options": {
+
+                "temperature":
+                    0.2
             }
-
-        ],
-
-        "stream": False,
-
-        "options": {
-
-            "temperature": 0.2
         }
-    }
+
+        response = requests.post(
+            OLLAMA_URL,
+            json=payload,
+            timeout=300
+        )
+
+        response.raise_for_status()
+
+        data = response.json()
+
+        return data[
+            "message"
+        ][
+            "content"
+        ]
+
+    except requests.exceptions.RequestException:
+
+        return _fallback_farmer_report(
+            result,
+            "Ollama is not reachable."
+        )
+
+    except (
+        KeyError,
+        TypeError,
+        ValueError,
+        OSError
+    ):
+
+        return _fallback_farmer_report(
+            result,
+            "Qwen2.5-VL could not be used."
+        )
 
 
-    response = requests.post(
-        OLLAMA_URL,
-        json=payload,
-        timeout=300
-    )
-
-
-    response.raise_for_status()
-
-    data = response.json()
-
-    return data[
-        "message"
-    ][
-        "content"
-    ]
-
-
-# ============================================================
-# TEST ONE REPORT
+# ============================================================# TEST ONE REPORT
 # ============================================================
 
 print("=" * 70)
@@ -396,3 +499,5 @@ print(
 )
 
 print("=" * 70)
+
+
