@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Large datasets
+data/raw/
+data/processed/
+
+# Generated reports
+data/reports/
+reports/
+experiments/
+logs/
+scratch/
+
+# Generated progression / field-test data
+data/progression/
+data/progression_images/
+data/field_test/
+
+# Other large model artifacts
+models/**/*.pt
+models/**/*.onnx
+models/**/*.safetensors
+
+# EfficientNet benchmark model
+models/classification/efficientnet_b0_best.pth
+
+# Generated images
+*.png
+*.jpg
+*.jpeg
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Temporary project file
+fix_folders_block.txt
