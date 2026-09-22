@@ -1122,13 +1122,29 @@ if app_mode == "🍃 Single Leaf Diagnosis":
 
         if "analysis_result" in st.session_state:
 
-            result = st.session_state[
+            result = st.session_state.get(
                 "analysis_result"
-            ]
+            ) or {}
 
-            analysis_image = st.session_state[
+            analysis_image = st.session_state.get(
                 "analysis_image"
-            ]
+            )
+
+            adv = result.get("advanced_observation") or {}
+            interpretation = result.get("advanced_interpretation") or {}
+            if not interpretation and adv:
+                interpretation = generate_advanced_interpretation(
+                    prediction=result.get("prediction", "Unknown"),
+                    confidence=result.get("confidence", 0.0),
+                    severity=result.get("severity", "Unknown"),
+                    affected_area=result.get(
+                        "affected_leaf",
+                        adv.get("affected_area_geometry", {}).get(
+                            "largest_component_pct", 0.0
+                        ),
+                    ),
+                    advanced_observation=adv,
+                )
 
             # ====================================================
             # UNIFIED HIGH-DENSITY DASHBOARD (EXACT VISUAL MATCH)
@@ -1659,15 +1675,15 @@ if app_mode == "🍃 Single Leaf Diagnosis":
                             if desc_key in payload and payload.get(desc_key):
                                 st.caption(payload[desc_key])
 
-                # Disease-specific interpretation layer that combines ResNet18, confidence,
-                # Grad-CAM and advanced measurements without altering the classifier itself.
-                interpretation = generate_advanced_interpretation(
-                    prediction=result.get("prediction", "Unknown"),
-                    confidence=result.get("confidence", 0.0),
-                    severity=result.get("severity", "Unknown"),
-                    affected_area=result.get("affected_leaf", adv.get("affected_area_geometry", {}).get("largest_component_pct", 0.0)),
-                    advanced_observation=adv,
-                )
+                # Reuse the real pipeline interpretation when available, otherwise generate it once.
+                if not interpretation:
+                    interpretation = generate_advanced_interpretation(
+                        prediction=result.get("prediction", "Unknown"),
+                        confidence=result.get("confidence", 0.0),
+                        severity=result.get("severity", "Unknown"),
+                        affected_area=result.get("affected_leaf", adv.get("affected_area_geometry", {}).get("largest_component_pct", 0.0)),
+                        advanced_observation=adv,
+                    )
 
                 with st.expander("🔬 Advanced Disease-Specific Interpretation", expanded=True):
                     st.markdown("### Key Visual Findings")
@@ -1715,7 +1731,9 @@ if app_mode == "🍃 Single Leaf Diagnosis":
                 )
 
                 top3_rows = []
-                for item in result.get("top3", []):
+                for item in (result.get("top3") or []):
+                    if not isinstance(item, dict):
+                        continue
                     class_name = item.get("friendly") or item.get("class")
                     confidence = item.get("confidence")
                     if class_name and isinstance(confidence, (int, float)):
@@ -1749,9 +1767,9 @@ if app_mode == "🍃 Single Leaf Diagnosis":
                     "Severity and observation reliability are categorical labels, not probabilities."
                 )
 
-                lesion_geometry = adv.get("affected_area_geometry", {})
-                connectivity_data = adv.get("connectivity", {})
-                morphology_data = adv.get("morphology", {})
+                lesion_geometry = adv.get("affected_area_geometry", {}) or {}
+                connectivity_data = adv.get("connectivity", {}) or {}
+                morphology_data = adv.get("morphology", {}) or {}
                 lesion_rows = []
                 lesion_metrics = [
                     ("Lesion count", morphology_data.get("lesion_count")),
@@ -1788,8 +1806,8 @@ if app_mode == "🍃 Single Leaf Diagnosis":
                     st.info("Graphical analysis unavailable for morphology measurements.")
                 st.caption("Only morphology values returned by the observation engine are shown.")
 
-                color_data = adv.get("color", {})
-                texture_data = adv.get("texture", {})
+                color_data = adv.get("color", {}) or {}
+                texture_data = adv.get("texture", {}) or {}
                 characteristic_rows = []
                 mean_rgb = color_data.get("mean_rgb")
                 if isinstance(mean_rgb, (list, tuple)) and len(mean_rgb) >= 3:

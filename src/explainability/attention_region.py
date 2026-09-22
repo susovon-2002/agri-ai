@@ -7,8 +7,7 @@ import torch
 
 from PIL import Image
 from torchvision import transforms, models
-from pytorch_grad_cam import GradCAM
-from pytorch_grad_cam.utils.model_targets import ClassifierOutputTarget
+from src.gradcam_compat import GradCAM, ClassifierOutputTarget
 
 
 # ============================================================

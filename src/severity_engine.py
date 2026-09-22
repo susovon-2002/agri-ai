@@ -10,8 +10,7 @@ from torchvision import transforms, models
 from torch.utils.data import DataLoader
 from torchvision.datasets import ImageFolder
 from tqdm import tqdm
-from pytorch_grad_cam import GradCAM
-from pytorch_grad_cam.utils.model_targets import ClassifierOutputTarget
+from src.gradcam_compat import GradCAM, ClassifierOutputTarget
 
 
 # ============================================================
