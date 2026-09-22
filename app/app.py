@@ -362,19 +362,14 @@ def generate_qwen_report(
     image,
     result
 ):
+    """
+    Generate the farmer-friendly AI report from the existing
+    computer-vision result.
 
-    buffer = io.BytesIO()
-
-    image.save(
-        buffer,
-        format="JPEG"
-    )
-
-    image_base64 = base64.b64encode(
-        buffer.getvalue()
-    ).decode(
-        "utf-8"
-    )
+    The uploaded image is intentionally NOT sent to the language
+    model. The CV pipeline has already analyzed the image.
+    This avoids slow vision inference on CPU-only environments.
+    """
 
     structured = {
 
@@ -403,7 +398,8 @@ def generate_qwen_report(
     prompt = f"""
 You are the AgriVision AI farmer-report assistant.
 
-The computer-vision model has already determined the result.
+The computer-vision model has already analyzed the uploaded
+leaf image and determined the result below.
 
 MODEL RESULT:
 
@@ -412,9 +408,11 @@ MODEL RESULT:
     indent=2
 )}
 
+Use ONLY this computer-vision result as the basis of the report.
+
 You must preserve all numerical values exactly.
 
-Write a clear farmer-friendly report.
+Write a clear, concise farmer-friendly report.
 
 Use exactly these sections:
 
@@ -437,9 +435,13 @@ Rules:
 - Do not invent numerical measurements.
 - Do not claim laboratory confirmation.
 - The affected-leaf percentage is a model-derived visual estimate.
-- Do not provide pesticide dosage or chemical prescriptions.
-- Use simple language.
+- Do not provide pesticide dosage.
+- Do not provide chemical prescriptions.
+- Use simple language suitable for a farmer.
+- Keep the report concise.
 - Recommend a local agricultural expert for treatment decisions.
+- Do not say that you personally examined the image.
+- Do not mention the language model, Ollama, Qwen, or internal AI architecture.
 """
 
     payload = {
@@ -453,11 +455,7 @@ Rules:
                 "role": "user",
 
                 "content":
-                    prompt,
-
-                "images": [
-                    image_base64
-                ]
+                    prompt
             }
         ],
 
@@ -474,7 +472,7 @@ Rules:
     response = requests.post(
         OLLAMA_URL,
         json=payload,
-        timeout=300
+        timeout=120
     )
 
     response.raise_for_status()
