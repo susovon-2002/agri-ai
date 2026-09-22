@@ -2,6 +2,7 @@ from pathlib import Path
 import base64
 import io
 import json
+import re
 import time
 import zipfile
 
@@ -52,6 +53,15 @@ from src.inference.inference_engine import (
 )
 
 # ============================================================
+# AGRICULTURAL KNOWLEDGE REPORT
+# ============================================================
+
+from src.knowledge.farmer_report import (
+    generate_report as generate_knowledge_report,
+)
+from src.knowledge.advanced_interpretation import generate_advanced_interpretation
+
+# ============================================================
 # DISEASE PROGRESSION ENGINE (Pure Python — from src.progression)
 # ============================================================
 
@@ -66,12 +76,6 @@ from src.progression.disease_progression import (
 # ============================================================
 # CONFIGURATION  (Streamlit-only values)
 # ============================================================
-
-OLLAMA_URL = (
-    "http://localhost:11434/api/chat"
-)
-
-OLLAMA_MODEL = "qwen2.5vl:3b"
 
 
 # ============================================================
@@ -355,135 +359,98 @@ def load_model():
 
 
 # ============================================================
-# QWEN REPORT
+# FARMER-FRIENDLY KNOWLEDGE REPORT
 # ============================================================
 
-def generate_qwen_report(
+def generate_farmer_report(
     image,
     result
 ):
     """
-    Generate the farmer-friendly AI report from the existing
-    computer-vision result.
+    Backward-compatible function name.
 
-    The uploaded image is intentionally NOT sent to the language
-    model. The CV pipeline has already analyzed the image.
-    This avoids slow vision inference on CPU-only environments.
+    The report is now generated entirely from the local
+    agricultural knowledge database.
+    external AI API, or uploaded-image transmission is used.
     """
 
-    structured = {
-
-        "crop_condition":
-            result["friendly_prediction"],
-
-        "model_prediction":
-            result["prediction"],
-
-        "confidence_percent":
-            round(
-                result["confidence"],
-                2
-            ),
-
-        "severity":
-            result["severity"],
-
-        "affected_leaf_percent":
-            round(
-                result["affected_leaf"],
-                2
+    structured_result = {
+        "predicted_class": result.get(
+            "prediction",
+            result.get(
+                "predicted_class",
+                "Unknown condition"
             )
+        ),
+        "confidence_percent": round(
+            float(
+                result.get(
+                    "confidence",
+                    result.get(
+                        "confidence_percent",
+                        0
+                    )
+                )
+                or 0
+            ),
+            2
+        ),
+        "affected_leaf_percent": round(
+            float(
+                result.get(
+                    "affected_leaf",
+                    result.get(
+                        "affected_leaf_percent",
+                        0
+                    )
+                )
+                or 0
+            ),
+            2
+        ),
+        "severity": result.get(
+            "severity",
+            "Unknown"
+        )
     }
 
-    prompt = f"""
-You are the AgriVision AI farmer-report assistant.
-
-The computer-vision model has already analyzed the uploaded
-leaf image and determined the result below.
-
-MODEL RESULT:
-
-{json.dumps(
-    structured,
-    indent=2
-)}
-
-Use ONLY this computer-vision result as the basis of the report.
-
-You must preserve all numerical values exactly.
-
-Write a clear, concise farmer-friendly report.
-
-Use exactly these sections:
-
-1. Crop / Plant
-2. Detected Condition
-3. Model Confidence
-4. Severity
-5. What the Result Means
-6. Visible / Relevant Symptoms
-7. General Management Guidance
-8. Prevention
-9. Important Note
-
-Rules:
-
-- Do not change the detected condition.
-- Do not change the confidence.
-- Do not change the severity.
-- Do not change the affected-leaf percentage.
-- Do not invent numerical measurements.
-- Do not claim laboratory confirmation.
-- The affected-leaf percentage is a model-derived visual estimate.
-- Do not provide pesticide dosage.
-- Do not provide chemical prescriptions.
-- Use simple language suitable for a farmer.
-- Keep the report concise.
-- Recommend a local agricultural expert for treatment decisions.
-- Do not say that you personally examined the image.
-- Do not mention the language model, Ollama, Qwen, or internal AI architecture.
-"""
-
-    payload = {
-
-        "model":
-            OLLAMA_MODEL,
-
-        "messages": [
-
-            {
-                "role": "user",
-
-                "content":
-                    prompt
-            }
-        ],
-
-        "stream":
-            False,
-
-        "options": {
-
-            "temperature":
-                0.2
-        }
-    }
-
-    response = requests.post(
-        OLLAMA_URL,
-        json=payload,
-        timeout=120
+    return generate_knowledge_report(
+        structured_result
     )
 
-    response.raise_for_status()
 
-    data = response.json()
+def prepare_display_report(raw_report: str) -> str:
+    """Create a Streamlit-only presentation copy without modifying the original report data."""
+    if not raw_report:
+        return ""
 
-    return data[
-        "message"
-    ][
-        "content"
-    ]
+    cleaned_lines = []
+    for line in raw_report.splitlines():
+        text = line.rstrip()
+        stripped = text.strip()
+
+        if not stripped:
+            cleaned_lines.append("")
+            continue
+
+        # Preserve existing numbered headings exactly as generated.
+        if stripped.startswith("**") and stripped.endswith("**") and any(ch.isdigit() for ch in stripped):
+            cleaned_lines.append(stripped)
+            continue
+
+        # Convert markdown headings to bold text, but do not add a second numeric counter.
+        if stripped.startswith("### "):
+            cleaned_lines.append(f"**{stripped[4:].strip()}**")
+            continue
+
+        if stripped.startswith("## "):
+            cleaned_lines.append(f"**{stripped[3:].strip()}**")
+            continue
+
+        cleaned_lines.append(stripped)
+
+    display_report = "\n".join(cleaned_lines).strip()
+    return display_report
 
 
 # ============================================================
@@ -708,6 +675,45 @@ def create_pdf(
             height=90 * mm
         )
     )
+
+    # --------------------------------------------------------
+    # Advanced disease-specific interpretation
+    # --------------------------------------------------------
+
+    adv = result.get("advanced_observation") or {}
+    if adv:
+        interpretation = generate_advanced_interpretation(
+            prediction=result.get("prediction", "Unknown"),
+            confidence=result.get("confidence", 0.0),
+            severity=result.get("severity", "Unknown"),
+            affected_area=result.get("affected_leaf", adv.get("affected_area_geometry", {}).get("largest_component_pct", 0.0)),
+            advanced_observation=adv,
+        )
+
+        story.append(
+            Paragraph(
+                "🔬 Advanced Disease-Specific Interpretation",
+                heading_style
+            )
+        )
+
+        for section_title, key in [
+            ("Key Visual Findings", "key_observations"),
+            ("What These Findings Mean", "visual_interpretation"),
+            ("Disease Compatibility", "disease_compatibility"),
+            ("Environmental Context", "environmental_context"),
+            ("Progression Context", "progression_context"),
+            ("Diagnostic Limitation", "limitations"),
+            ("What This Means for the Farmer", "farmer_summary"),
+        ]:
+            values = interpretation.get(key, [])
+            if isinstance(values, list):
+                text = "\n".join(f"- {item}" for item in values if item)
+            else:
+                text = str(values)
+            if text:
+                story.append(Paragraph(section_title, ParagraphStyle("PdfSectionTitle", parent=styles["Heading3"], fontSize=11, spaceBefore=7, spaceAfter=4)))
+                story.append(Paragraph(text.replace("**", ""), body_style))
 
     # --------------------------------------------------------
     # Farmer report
@@ -1608,9 +1614,221 @@ if app_mode == "🍃 Single Leaf Diagnosis":
                     "region pipeline."
                 )
 
+            adv = result.get("advanced_observation") or {}
+            if adv:
+                with st.expander("🔬 Advanced Computer-Vision Observation", expanded=True):
+                    st.markdown("**These observations describe measurable visual characteristics of the uploaded image. They are not an independent laboratory diagnosis.**")
+                    obs_cols = st.columns(4)
+                    metrics = [
+                        ("Visible affected area", f"{adv.get('affected_area_geometry', {}).get('largest_component_pct', 0.0):.2f}%"),
+                        ("Meaningful regions", str(adv.get('affected_area_geometry', {}).get('meaningful_abnormal_regions', 0))),
+                        ("Connectivity", adv.get('connectivity', {}).get('connectivity_level', 'Not available')),
+                        ("Distribution", adv.get('spatial_distribution', {}).get('distribution', 'Not available')),
+                    ]
+                    for idx, (label, value) in enumerate(metrics):
+                        with obs_cols[idx]:
+                            st.metric(label, value)
+
+                    st.markdown("### 🧠 Key Advanced Observation")
+                    st.write(adv.get("summary", "No advanced observation summary is available."))
+
+                    st.markdown("### 🧠 Scientific Interpretation of Visual Observations")
+                    st.write(adv.get("scientific_interpretation", "The observed visual pattern is compatible with the detected lesion pattern, but it is not independent laboratory confirmation."))
+
+                    cards = [
+                        ("🩻 Lesion Morphology", adv.get("morphology", {}), "Description"),
+                        ("🗺️ Spatial Distribution", adv.get("spatial_distribution", {}), "description"),
+                        ("🔗 Lesion Connectivity", adv.get("connectivity", {}), "description"),
+                        ("🎨 Color Analysis", adv.get("color", {}), "description"),
+                        ("🧬 Texture Analysis", adv.get("texture", {}), "description"),
+                        ("🌿 Vein Relationship", adv.get("vein_relationship", {}), "description"),
+                        ("📐 Damage Pattern", adv.get("damage_pattern", {}), "description"),
+                        ("📷 Image Quality", adv.get("image_quality", {}), "notes"),
+                        ("🔄 Cross-Analysis Consistency", adv.get("cross_analysis", {}), "description"),
+                    ]
+                    for title, payload, desc_key in cards:
+                        if not payload:
+                            continue
+                        with st.expander(title):
+                            for key, value in payload.items():
+                                if key == desc_key or key == "description":
+                                    continue
+                                if isinstance(value, (dict, list, tuple)):
+                                    value = json.dumps(value, ensure_ascii=False)
+                                st.write(f"**{key.replace('_', ' ').title()}:** {value}")
+                            if desc_key in payload and payload.get(desc_key):
+                                st.caption(payload[desc_key])
+
+                # Disease-specific interpretation layer that combines ResNet18, confidence,
+                # Grad-CAM and advanced measurements without altering the classifier itself.
+                interpretation = generate_advanced_interpretation(
+                    prediction=result.get("prediction", "Unknown"),
+                    confidence=result.get("confidence", 0.0),
+                    severity=result.get("severity", "Unknown"),
+                    affected_area=result.get("affected_leaf", adv.get("affected_area_geometry", {}).get("largest_component_pct", 0.0)),
+                    advanced_observation=adv,
+                )
+
+                with st.expander("🔬 Advanced Disease-Specific Interpretation", expanded=True):
+                    st.markdown("### Key Visual Findings")
+                    for item in interpretation.get("key_observations", []):
+                        st.write(f"- {item}")
+
+                    st.markdown("### What These Findings Mean")
+                    st.write(interpretation.get("visual_interpretation", "No disease-specific visual interpretation is available for this class."))
+
+                    st.markdown("### Disease Compatibility")
+                    st.write(interpretation.get("disease_compatibility", "The image pattern is consistent with the predicted class but does not independently confirm the causal pathogen."))
+
+                    st.markdown("### Environmental Context")
+                    st.write(interpretation.get("environmental_context", "No environmental context is available from the uploaded image alone."))
+
+                    st.markdown("### Progression Context")
+                    st.write(interpretation.get("progression_context", "The single image provides visible lesion extent only; it does not establish time-dependent spread."))
+
+                    st.markdown("### Cross-Analysis Consistency")
+                    cross = adv.get("cross_analysis", {})
+                    consistency = cross.get("consistency", "Moderate")
+                    overlap = cross.get("overlap_percent")
+                    if overlap is not None:
+                        st.write(f"Cross-analysis consistency is {consistency} with an estimated overlap of {overlap:.2f}% between the abnormal region mask and the model attention map.")
+                    else:
+                        st.write(f"Cross-analysis consistency is {consistency}. The model attention and the measured abnormal tissue are evaluated together, but this does not prove the disease cause.")
+
+                    st.markdown("### Diagnostic Limitation")
+                    st.write(interpretation.get("limitations", "These observations are derived from the uploaded image and provide supporting visual evidence only. They do not independently confirm the causal pathogen or replace laboratory or field diagnosis."))
+
+                    st.markdown("### 🌱 What This Means for the Farmer")
+                    st.write(interpretation.get("farmer_summary", "The uploaded leaf shows a pattern compatible with the predicted disease class. If conditions remain favorable, nearby plants should be checked for similar symptoms."))
+
+                    st.caption(f"Observation reliability: {interpretation.get('observation_reliability', 'MODERATE')}")
+
 
             # ====================================================
-            # QWEN REPORT
+            # GRAPHICAL ANALYTICS
+            # ====================================================
+
+            with st.expander("📊 Graphical Analytics", expanded=True):
+                st.caption(
+                    "Charts summarize the current uploaded image only. "
+                    "They use measurements already produced by the existing analysis pipeline."
+                )
+
+                top3_rows = []
+                for item in result.get("top3", []):
+                    class_name = item.get("friendly") or item.get("class")
+                    confidence = item.get("confidence")
+                    if class_name and isinstance(confidence, (int, float)):
+                        top3_rows.append({"Class": class_name, "Confidence (%)": float(confidence)})
+
+                st.markdown("#### Top-3 Model Predictions")
+                if top3_rows:
+                    top3_frame = pd.DataFrame(top3_rows).set_index("Class")
+                    st.bar_chart(top3_frame, horizontal=True, use_container_width=True)
+                else:
+                    st.info("Graphical analysis unavailable for the top-3 predictions.")
+
+                st.markdown("#### Current Leaf Analysis Metrics")
+                metric_cols = st.columns(4)
+                metric_values = [
+                    ("Model confidence", result.get("confidence"), "%"),
+                    ("Affected area", result.get("affected_leaf"), "%"),
+                    ("Severity", result.get("severity"), ""),
+                    ("Observation reliability", interpretation.get("observation_reliability"), ""),
+                ]
+                for column, (label, value, suffix) in zip(metric_cols, metric_values):
+                    with column:
+                        if value is None or value == "":
+                            st.metric(label, "N/A")
+                        elif suffix and isinstance(value, (int, float)):
+                            st.metric(label, f"{float(value):.2f}{suffix}")
+                        else:
+                            st.metric(label, str(value))
+                st.caption(
+                    "Model confidence and affected area are percentages. "
+                    "Severity and observation reliability are categorical labels, not probabilities."
+                )
+
+                lesion_geometry = adv.get("affected_area_geometry", {})
+                connectivity_data = adv.get("connectivity", {})
+                morphology_data = adv.get("morphology", {})
+                lesion_rows = []
+                lesion_metrics = [
+                    ("Lesion count", morphology_data.get("lesion_count")),
+                    ("Meaningful abnormal regions", lesion_geometry.get("meaningful_abnormal_regions")),
+                    ("Isolated regions", connectivity_data.get("isolated_regions")),
+                    ("Merged regions", connectivity_data.get("merged_regions")),
+                    ("Largest component (%)", lesion_geometry.get("largest_component_pct")),
+                ]
+                for label, value in lesion_metrics:
+                    if isinstance(value, (int, float)) and not isinstance(value, bool):
+                        lesion_rows.append({"Measurement": label, "Value": float(value)})
+
+                st.markdown("#### Lesion Analysis")
+                if lesion_rows:
+                    st.bar_chart(pd.DataFrame(lesion_rows).set_index("Measurement"), use_container_width=True)
+                else:
+                    st.info("Graphical analysis unavailable for lesion measurements.")
+
+                morphology_rows = []
+                morphology_metrics = [
+                    ("Average lesion area", morphology_data.get("mean_lesion_area")),
+                    ("Largest lesion area", morphology_data.get("largest_lesion_area")),
+                    ("Circularity", morphology_data.get("mean_circularity")),
+                    ("Solidity", morphology_data.get("mean_solidity")),
+                ]
+                for label, value in morphology_metrics:
+                    if isinstance(value, (int, float)) and not isinstance(value, bool):
+                        morphology_rows.append({"Measurement": label, "Value": float(value)})
+
+                st.markdown("#### Lesion Morphology")
+                if morphology_rows:
+                    st.bar_chart(pd.DataFrame(morphology_rows).set_index("Measurement"), use_container_width=True)
+                else:
+                    st.info("Graphical analysis unavailable for morphology measurements.")
+                st.caption("Only morphology values returned by the observation engine are shown.")
+
+                color_data = adv.get("color", {})
+                texture_data = adv.get("texture", {})
+                characteristic_rows = []
+                mean_rgb = color_data.get("mean_rgb")
+                if isinstance(mean_rgb, (list, tuple)) and len(mean_rgb) >= 3:
+                    for channel, value in zip(("Mean red", "Mean green", "Mean blue"), mean_rgb[:3]):
+                        if isinstance(value, (int, float)):
+                            characteristic_rows.append({"Measurement": channel, "Value": float(value)})
+                if isinstance(texture_data.get("edge_density"), (int, float)):
+                    characteristic_rows.append({"Measurement": "Edge density", "Value": float(texture_data["edge_density"])})
+                if isinstance(texture_data.get("contrast"), (int, float)):
+                    characteristic_rows.append({"Measurement": "Grayscale variation", "Value": float(texture_data["contrast"])})
+
+                st.markdown("#### Color and Texture Characteristics")
+                if characteristic_rows:
+                    st.bar_chart(pd.DataFrame(characteristic_rows).set_index("Measurement"), use_container_width=True)
+                else:
+                    st.info("Graphical analysis unavailable for color and texture measurements.")
+                st.caption(
+                    f"Color contrast: {color_data.get('contrast_to_healthy', 'N/A')} | "
+                    f"Texture variation: {texture_data.get('texture_variation', 'N/A')}"
+                )
+
+                st.markdown("#### AI Analysis Pipeline")
+                flow_steps = [
+                    "Leaf Image", "ResNet18", "Prediction", "Grad-CAM", "Segmentation",
+                    "Affected Area", "Advanced Observation", "Disease-Specific Interpretation", "Farmer Report",
+                ]
+                st.markdown(
+                    "<div style='display:flex; flex-wrap:wrap; align-items:center; gap:6px; line-height:1.8;'>"
+                    + "<span> ↓ </span>".join(
+                        f"<span style='border:1px solid #cbd5e1; border-radius:6px; padding:4px 8px; background:#f8fafc;'>{step}</span>"
+                        for step in flow_steps
+                    )
+                    + "</div>",
+                    unsafe_allow_html=True,
+                )
+
+
+            # ====================================================
+            # FARMER-FRIENDLY KNOWLEDGE REPORT
             # ====================================================
 
             st.markdown(
@@ -1630,13 +1848,13 @@ if app_mode == "🍃 Single Leaf Diagnosis":
             if report_button:
 
                 with st.spinner(
-                    "AI is preparing the farmer report..."
+                    "Preparing the farmer report from the agricultural knowledge database..."
                 ):
 
                     try:
 
                         farmer_report = (
-                            generate_qwen_report(
+                            generate_farmer_report(
                                 analysis_image,
                                 result
                             )
@@ -1661,16 +1879,13 @@ if app_mode == "🍃 Single Leaf Diagnosis":
                 "farmer_report"
             ):
 
-                farmer_report = (
-                    st.session_state[
-                        "farmer_report"
-                    ]
-                )
+                original_report = st.session_state["farmer_report"]
+                display_report = prepare_display_report(original_report)
 
-                st.markdown(
-                    farmer_report
-                )
-
+                # Keep the original report unchanged for PDF/session state while showing a
+                # presentation copy in Streamlit. This prevents the UI from adding a second
+                # number before headings that are already numbered in the source report.
+                st.markdown(display_report)
 
                 st.divider()
 
@@ -1684,12 +1899,9 @@ if app_mode == "🍃 Single Leaf Diagnosis":
                 ):
 
                     pdf_bytes = create_pdf(
-
                         analysis_image,
-
                         result,
-
-                        farmer_report
+                        st.session_state.get("farmer_report") or ""
                     )
 
 
@@ -1776,7 +1988,7 @@ if app_mode == "🍃 Single Leaf Diagnosis":
                         result.get("morphology_regions", []),
 
                     "farmer_report":
-                        farmer_report
+                        st.session_state.get("farmer_report") or ""
                 }
 
 

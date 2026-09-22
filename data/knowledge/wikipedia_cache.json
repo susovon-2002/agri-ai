@@ -1,0 +1,98 @@
+{
+  "Tomato_Late_blight": {
+    "title": "Phytophthora infestans",
+    "description": "Species of single-celled organism",
+    "extract": "Phytophthora infestans is an oomycete or water mold, a fungus-like microorganism (oomycete) that causes the serious crop disease known as late blight or potato blight. The Early blight caused by Alternaria solani is also often called \"potato blight\". Despite its resemblance to true fungi, morphological and molecular classification places this organism among the Stramenopiles; as their cell walls are made of cellulose instead of chitin, and they reproduce through swimming spores, they are evolutionary and functionally closer to algae and diatoms.",
+    "url": "https://en.wikipedia.org/wiki/Phytophthora_infestans",
+    "source": "Wikipedia",
+    "retrieved_at": "2026-09-22T17:43:32Z"
+  },
+  "Pepper__bell___Bacterial_spot": {
+    "title": "Bacterial leaf spot of peppers and tomato",
+    "description": "Species of bacterium",
+    "extract": "Bacterial leaf spot on peppers and tomatoes is caused by a gram-negative and rod-shaped bacterium in the genus Xanthomonas. It causes symptoms throughout the above-ground portion of the plant including leaf spots, fruit spots and stem cankers. There are four pathovars classified in three different species that can cause this disease, named by alphabetical groups. Nevertheless, the prevention and treatment is very similar: since this bacterium cannot live in soil for more than a few weeks and survives as inoculum on plant debris, removal of dead plant material and chemical applications to living plants are considered effective control mechanisms.",
+    "url": "https://en.wikipedia.org/wiki/Bacterial_leaf_spot_of_peppers_and_tomato",
+    "source": "Wikipedia",
+    "retrieved_at": "2026-09-22T17:45:25Z"
+  },
+  "Potato___Early_blight": {
+    "title": "Alternaria solani",
+    "description": "Species of fungus",
+    "extract": "Alternaria solani is a fungal pathogen that produces a disease in tomato and potato plants called early blight. The pathogen produces distinctive \"bullseye\" patterned leaf spots and can also cause stem lesions and fruit rot on tomato and tuber blight on potato. Despite the name \"early\", foliar symptoms usually occur on older leaves. If uncontrolled, early blight can cause significant yield reductions. Primary methods of controlling this disease include preventing long periods of wetness on leaf surfaces and applying fungicides. Early blight can also be caused by Alternaria tomatophila, which is more virulent on stems and leaves of tomato plants than Alternaria solani.",
+    "url": "https://en.wikipedia.org/wiki/Alternaria_solani",
+    "source": "Wikipedia",
+    "retrieved_at": "2026-09-22T17:45:25Z"
+  },
+  "Potato___Late_blight": {
+    "title": "Phytophthora infestans",
+    "description": "Species of single-celled organism",
+    "extract": "Phytophthora infestans is an oomycete or water mold, a fungus-like microorganism (oomycete) that causes the serious crop disease known as late blight or potato blight. The Early blight caused by Alternaria solani is also often called \"potato blight\". Despite its resemblance to true fungi, morphological and molecular classification places this organism among the Stramenopiles; as their cell walls are made of cellulose instead of chitin, and they reproduce through swimming spores, they are evolutionary and functionally closer to algae and diatoms.",
+    "url": "https://en.wikipedia.org/wiki/Phytophthora_infestans",
+    "source": "Wikipedia",
+    "retrieved_at": "2026-09-22T17:45:25Z"
+  },
+  "Tomato_Bacterial_spot": {
+    "title": "Bacterial leaf spot of peppers and tomato",
+    "description": "Species of bacterium",
+    "extract": "Bacterial leaf spot on peppers and tomatoes is caused by a gram-negative and rod-shaped bacterium in the genus Xanthomonas. It causes symptoms throughout the above-ground portion of the plant including leaf spots, fruit spots and stem cankers. There are four pathovars classified in three different species that can cause this disease, named by alphabetical groups. Nevertheless, the prevention and treatment is very similar: since this bacterium cannot live in soil for more than a few weeks and survives as inoculum on plant debris, removal of dead plant material and chemical applications to living plants are considered effective control mechanisms.",
+    "url": "https://en.wikipedia.org/wiki/Bacterial_leaf_spot_of_peppers_and_tomato",
+    "source": "Wikipedia",
+    "retrieved_at": "2026-09-22T17:45:26Z"
+  },
+  "Tomato_Early_blight": {
+    "title": "Alternaria solani",
+    "description": "Species of fungus",
+    "extract": "Alternaria solani is a fungal pathogen that produces a disease in tomato and potato plants called early blight. The pathogen produces distinctive \"bullseye\" patterned leaf spots and can also cause stem lesions and fruit rot on tomato and tuber blight on potato. Despite the name \"early\", foliar symptoms usually occur on older leaves. If uncontrolled, early blight can cause significant yield reductions. Primary methods of controlling this disease include preventing long periods of wetness on leaf surfaces and applying fungicides. Early blight can also be caused by Alternaria tomatophila, which is more virulent on stems and leaves of tomato plants than Alternaria solani.",
+    "url": "https://en.wikipedia.org/wiki/Alternaria_solani",
+    "source": "Wikipedia",
+    "retrieved_at": "2026-09-22T17:45:26Z"
+  },
+  "Tomato_Leaf_Mold": {
+    "title": "Passalora fulva",
+    "description": "Species of fungus",
+    "extract": "Passalora fulva is a fungal plant pathogen that causes tomato leaf mold.",
+    "url": "https://en.wikipedia.org/wiki/Passalora_fulva",
+    "source": "Wikipedia",
+    "retrieved_at": "2026-09-22T17:45:27Z"
+  },
+  "Tomato_Septoria_leaf_spot": {
+    "title": "Septoria lycopersici",
+    "description": "Species of fungus",
+    "extract": "Septoria lycopersici is a fungal pathogen that is most commonly found infecting tomatoes. It causes one of the most destructive diseases of tomatoes and attacks tomatoes during any stage of development.",
+    "url": "https://en.wikipedia.org/wiki/Septoria_lycopersici",
+    "source": "Wikipedia",
+    "retrieved_at": "2026-09-22T17:45:27Z"
+  },
+  "Tomato_Spider_mites_Two_spotted_spider_mite": {
+    "title": "Tetranychus urticae",
+    "description": "Species of mite",
+    "extract": "Tetranychus urticae is a species of plant-feeding mite generally considered to be a pest. It is the most widely known member of the family Tetranychidae or spider mites. Its genome was fully sequenced in 2011, and was the first genome sequence from any chelicerate.",
+    "url": "https://en.wikipedia.org/wiki/Tetranychus_urticae",
+    "source": "Wikipedia",
+    "retrieved_at": "2026-09-22T17:45:28Z"
+  },
+  "Tomato__Target_Spot": {
+    "title": "Corynespora cassiicola",
+    "description": "Species of fungus",
+    "extract": "Corynespora cassiicola is a species of fungus well known as a plant pathogen. It is a sac fungus in the family Corynesporascaceae. It is the type species of the genus Corynespora.",
+    "url": "https://en.wikipedia.org/wiki/Corynespora_cassiicola",
+    "source": "Wikipedia",
+    "retrieved_at": "2026-09-22T17:45:28Z"
+  },
+  "Tomato__Tomato_YellowLeaf__Curl_Virus": {
+    "title": "Tomato yellow leaf curl virus",
+    "description": "Species of virus",
+    "extract": "Tomato yellow leaf curl virus (TYLCV) is a DNA virus from the genus Begomovirus and the family Geminiviridae. TYLCV is one of the most serious diseases affecting tomato plants, especially in tropical and subtropical areas, where it often causes major crop losses. This virus is transmitted by an insect vector from the family Aleyrodidae and order Hemiptera, the whitefly Bemisia tabaci, commonly known as the silverleaf whitefly or the sweet potato whitefly. The primary host for TYLCV is the tomato plant, and other plant hosts where TYLCV infection has been found include eggplants, potatoes, tobacco, beans, and peppers. Due to the rapid spread of TYLCV in the last few decades, there is an increased focus in research trying to understand and control this damaging pathogen. Some interesting findings include the virus being sexually transmitted from infected males to non-infected females, and an evidence that TYLCV is transovarially transmitted to offspring for two generations.",
+    "url": "https://en.wikipedia.org/wiki/Tomato_yellow_leaf_curl_virus",
+    "source": "Wikipedia",
+    "retrieved_at": "2026-09-22T17:45:29Z"
+  },
+  "Tomato__Tomato_mosaic_virus": {
+    "title": "Tomato mosaic virus",
+    "description": "Species of virus",
+    "extract": "Tomato mosaic virus (ToMV) is a plant pathogenic virus. It is found worldwide and affects tomatoes and many other plants.",
+    "url": "https://en.wikipedia.org/wiki/Tomato_mosaic_virus",
+    "source": "Wikipedia",
+    "retrieved_at": "2026-09-22T17:45:29Z"
+  }
+}

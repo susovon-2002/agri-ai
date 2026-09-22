@@ -50,6 +50,10 @@ from src.visualization.leaf_vein_analysis import (
     save_leaf_vein_reports,
 )
 
+from src.vision.advanced_observation import analyze_leaf_observations
+from src.knowledge.advanced_interpretation import generate_advanced_interpretation
+from src.knowledge.farmer_report import generate_report as generate_knowledge_report
+
 
 # ============================================================
 # CONFIGURATION
@@ -504,6 +508,34 @@ def analyze_image(image, model):
     except Exception as exc:
         print(f"Notice: leaf vein analysis skipped: {exc}")
 
+    adv_obs = analyze_leaf_observations(
+        image=rgb,
+        leaf_mask=leaf_mask,
+        affected_mask=infected_mask,
+        gradcam=grayscale_cam,
+        vein_map=vein_skeleton,
+        prediction=predicted_name,
+        affected_leaf_percent=affected_leaf,
+    )
+
+    advanced_interpretation = generate_advanced_interpretation(
+        prediction=predicted_name,
+        confidence=confidence,
+        severity=severity,
+        affected_area=affected_leaf,
+        advanced_observation=adv_obs,
+    )
+
+    farmer_report = generate_knowledge_report({
+        "predicted_class": predicted_name,
+        "prediction": predicted_name,
+        "confidence_percent": confidence,
+        "confidence": confidence,
+        "affected_leaf_percent": affected_leaf,
+        "affected_leaf": affected_leaf,
+        "severity": severity,
+    })
+
     return {
         "prediction":               predicted_name,
         "friendly_prediction":      friendly_pred,
@@ -531,4 +563,7 @@ def analyze_image(image, model):
         "vein_metrics":             vein_metrics,
         "vein_regions_overlay":     vein_regions_overlay,
         "vein_region_crops":        vein_region_crops,
+        "advanced_observation":     adv_obs,
+        "advanced_interpretation":  advanced_interpretation,
+        "farmer_report":            farmer_report,
     }

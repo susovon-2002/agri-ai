@@ -1,0 +1,1821 @@
+{
+  "Pepper__bell___Bacterial_spot": {
+    "crop": "Pepper",
+    "condition": "Pepper Bacterial Spot",
+    "disease_type": "Bacterial disease",
+    "causal_agent": "Xanthomonas species complex",
+    "pathogen_group": "Bacteria",
+    "scientific_name": "Xanthomonas spp.",
+    "definition": "A bacterial leaf and fruit disease of pepper that is favored by warm, wet conditions and can spread rapidly in dense, poorly ventilated crop canopies.",
+    "detailed_description": "Pepper bacterial spot develops when bacteria infect leaf tissue through natural openings or wounds and then spread through splashing water, contaminated hands, tools and infected plant material. The disease is most important when weather stays warm and wet for extended periods.",
+    "disease_triangle": {
+      "pathogen": "Xanthomonas bacteria survive on infected crop residue, transplants and volunteer hosts and reproduce when tissues remain wet.",
+      "host": "Susceptible pepper plants are especially vulnerable when plants are crowded or tissues are wounded or stressed.",
+      "environment": "Warm temperatures, high humidity, leaf wetness and splashing water create a favorable environment for bacterial infection and secondary spread."
+    },
+    "why_it_occurs": "The pathogen multiplies rapidly when pepper tissues stay wet and the crop canopy remains humid, allowing bacteria to enter leaves and fruit through natural openings and minor wounds.",
+    "how_it_starts": "Infection often begins on older foliage or on transplants before the crop is established. Splashing water and contaminated tools then move the bacteria to healthy leaves and fruit.",
+    "disease_cycle": "Source/survival on infected debris or transplants -> initial leaf infection -> bacterial multiplication in wet tissues -> lesion development -> spread by splash and handling -> secondary cycles in nearby plants.",
+    "how_it_spreads": [
+      "Splashing irrigation or rain moves bacteria between plants.",
+      "Hands, pruning tools and equipment can transfer bacteria.",
+      "Infected transplants and crop debris can start new outbreaks."
+    ],
+    "favorable_conditions": [
+      "Warm weather",
+      "High humidity",
+      "Frequent rainfall or overhead irrigation",
+      "Dense canopy with reduced air movement",
+      "Wet foliage for extended periods"
+    ],
+    "unfavorable_conditions": [
+      "Dry weather with minimal leaf wetness",
+      "Good airflow around plants",
+      "Watering at the base rather than overhead"
+    ],
+    "environmental_risk": "High humidity and persistent wet leaves keep bacterial cells active and increase the likelihood of repeated infection cycles after rain or irrigation.",
+    "early_symptoms": [
+      "Small dark circular leaf spots",
+      "Water-soaked lesions on leaves",
+      "Tiny lesions starting on older foliage"
+    ],
+    "symptom_explanations": [
+      {
+        "symptom": "Small dark circular leaf spots",
+        "why_it_occurs": "Bacterial multiplication in leaf tissue damages cells and creates a visible necrotic lesion.",
+        "when_it_occurs": "Symptoms usually appear during periods of warm, wet weather and after infection has become established.",
+        "what_it_indicates": "The lesion indicates that the disease is active and may continue spreading to nearby tissues and plants."
+      },
+      {
+        "symptom": "Raised scabby fruit lesions",
+        "why_it_occurs": "Fruit tissues become infected and the bacteria trigger localized tissue collapse and corky growth.",
+        "when_it_occurs": "Fruit symptoms often develop after periods of high humidity and repeated splash spread.",
+        "what_it_indicates": "Fruit infection indicates the epidemic is established and fruit quality is likely to decline."
+      }
+    ],
+    "leaf_symptoms": [
+      "Brown circular lesions with possible yellow margins",
+      "Lesions may enlarge and coalesce",
+      "Severe infection can cause defoliation"
+    ],
+    "leaf_symptom_explanations": [
+      {
+        "symptom": "Brown circular lesions with possible yellow margins",
+        "why_it_occurs": "Bacterial infection disrupts tissue and causes localized cell death, while surrounding tissue may yellow as the leaf responds to stress.",
+        "when_it_occurs": "This is most common after bouts of rain, overhead irrigation or high humidity.",
+        "what_it_indicates": "The lesion pattern suggests an active bacterial disease that is reducing leaf function."
+      }
+    ],
+    "stem_symptoms": [
+      "Small dark lesions may form on petioles and stems"
+    ],
+    "stem_symptom_explanations": [
+      {
+        "symptom": "Small dark lesions on petioles and stems",
+        "why_it_occurs": "Bacterial cells can colonize stems or petioles after splash dispersal or handling contamination.",
+        "when_it_occurs": "These lesions appear later when the epidemic is active and foliage remains wet.",
+        "what_it_indicates": "Stem or petiole infection indicates the crop is under strong disease pressure."
+      }
+    ],
+    "fruit_symptoms": [
+      "Raised, rough or scabby fruit lesions",
+      "Fruit may be cosmetically damaged and less marketable"
+    ],
+    "fruit_symptom_explanations": [
+      {
+        "symptom": "Raised rough fruit lesions",
+        "why_it_occurs": "Fruit tissue becomes infected and loses normal integrity, leading to corky or rough lesions.",
+        "when_it_occurs": "Symptoms are usually seen during warm, wet periods and after disease has spread through the canopy.",
+        "what_it_indicates": "Fruit quality is being compromised and disease management has likely been insufficient."
+      }
+    ],
+    "root_or_tuber_symptoms": [
+      "Not applicable for this disease."
+    ],
+    "root_or_tuber_symptom_explanations": [
+      {
+        "symptom": "Not applicable for this disease.",
+        "why_it_occurs": "The pathogen primarily colonizes foliage and fruit rather than roots or tubers.",
+        "when_it_occurs": "This is generally not a major disease feature for this disease.",
+        "what_it_indicates": "The absence of root or tuber symptoms helps distinguish this disease from other soilborne problems."
+      }
+    ],
+    "advanced_symptoms": [
+      "Extensive leaf loss",
+      "Reduced canopy function",
+      "Severe fruit blemishing"
+    ],
+    "disease_progression": "Disease intensity rises as bacteria continue cycling through wet tissues, leading to more lesions, defoliation and fruit blemishes if conditions stay favorable.",
+    "identification": [
+      "Circular leaf lesions with water-soaking or yellow margins",
+      "Disease favored by warm wet weather",
+      "Fruit lesions can help confirm the diagnosis"
+    ],
+    "similar_conditions": [
+      "Alternaria leaf spot",
+      "Early blight",
+      "Other bacterial leaf spots"
+    ],
+    "monitoring": [
+      "Inspect lower and middle foliage during warm wet weather",
+      "Scout transplants before field planting",
+      "Check fruit for rough lesions during harvest periods"
+    ],
+    "natural_prevention": [
+      "Use disease-free seed and transplants",
+      "Remove or destroy infected crop residue",
+      "Reduce volunteer hosts and weeds near the field",
+      "Maintain good airflow and avoid crowding"
+    ],
+    "cultural_prevention": [
+      "Water at the base of plants",
+      "Avoid overhead irrigation when possible",
+      "Use crop rotation where practical",
+      "Sanitize tools and hands after handling infected plants"
+    ],
+    "management": [
+      "Use healthy planting material",
+      "Avoid unnecessary overhead irrigation",
+      "Keep foliage dry when practical",
+      "Remove affected plants or tissues according to local guidance",
+      "Follow local agricultural-extension recommendations for disease management"
+    ],
+    "what_to_avoid": [
+      "Working through wet foliage",
+      "Moving contaminated tools among plots",
+      "Leaving infected crop debris in place"
+    ],
+    "when_to_seek_expert_help": "Seek local agricultural advice if the disease spreads rapidly, if fruit quality is declining, or if symptoms do not match expected patterns.",
+    "important_note": "This report is based on computer-vision classification and local disease knowledge; it is not a laboratory diagnosis.",
+    "sources": [
+      "https://extension.umn.edu/agriculture/specialty-crops/vegetable-farming/disease-management/bacterial-spot-of-tomato-and-pepper"
+    ]
+  },
+  "Pepper__bell___healthy": {
+    "crop": "Pepper",
+    "condition": "Healthy Pepper Plant",
+    "disease_type": "Healthy model class",
+    "causal_agent": "No disease-causing organism detected by the model.",
+    "pathogen_group": "Not applicable",
+    "scientific_name": "Healthy plant phenotype",
+    "definition": "The model classified this pepper image as healthy within the trained classes. This does not guarantee that the entire crop is free of all pests, nutrient stress or other disorders.",
+    "detailed_description": "Healthy pepper tissue usually shows consistent green color, normal surface texture and no obvious diagnostic lesion pattern. The model result indicates that the uploaded leaf fits the healthy phenotype represented in the training data.",
+    "disease_triangle": {
+      "pathogen": "No active pathogen is indicated by the image classification.",
+      "host": "The pepper plant appears to be in a healthy state with no obvious disease pattern.",
+      "environment": "Favorable growing conditions are consistent with a healthy, functioning canopy."
+    },
+    "why_it_occurs": "No disease is indicated by the model; the image is consistent with a healthy pepper leaf appearance.",
+    "how_it_starts": "Healthy leaves do not show the pattern of a pathogen-driven disease process.",
+    "disease_cycle": "Not applicable for a healthy classification.",
+    "how_it_spreads": [
+      "No disease spread is indicated."
+    ],
+    "favorable_conditions": [
+      "Balanced moisture",
+      "Sufficient light",
+      "Good airflow",
+      "Healthy crop nutrition"
+    ],
+    "unfavorable_conditions": [
+      "New lesions or unusual discoloration",
+      "Sudden wilting or tissue collapse",
+      "Unusual pest feeding or stunting"
+    ],
+    "environmental_risk": "The main risk is missing a new symptom if the crop is not regularly scouted after this image was taken.",
+    "early_symptoms": [
+      "No disease-specific symptoms identified in this healthy-class image."
+    ],
+    "symptom_explanations": [
+      {
+        "symptom": "Healthy green leaf appearance",
+        "why_it_occurs": "Leaf tissue is functioning normally and there is no visible lesion development.",
+        "when_it_occurs": "This is the normal condition when the crop is not undergoing an active disease process.",
+        "what_it_indicates": "A healthy appearance suggests no strong disease signal is present in the analyzed image."
+      }
+    ],
+    "leaf_symptoms": [
+      "No disease-specific symptoms were selected by the model."
+    ],
+    "leaf_symptom_explanations": [
+      {
+        "symptom": "No disease-specific symptoms were selected by the model.",
+        "why_it_occurs": "The image aligns with healthy pepper leaf structure and color.",
+        "when_it_occurs": "During normal growth and in the absence of active disease.",
+        "what_it_indicates": "The observed leaf pattern is consistent with a healthy crop condition."
+      }
+    ],
+    "stem_symptoms": [
+      "Not applicable for this healthy-class image."
+    ],
+    "stem_symptom_explanations": [
+      {
+        "symptom": "Not applicable for this healthy-class image.",
+        "why_it_occurs": "No biotic stress signal is evident in the image.",
+        "when_it_occurs": "Not applicable.",
+        "what_it_indicates": "No disease is indicated for the structures visible in this image."
+      }
+    ],
+    "fruit_symptoms": [
+      "Not applicable for this healthy-class image."
+    ],
+    "fruit_symptom_explanations": [
+      {
+        "symptom": "Not applicable for this healthy-class image.",
+        "why_it_occurs": "The image did not show disease-related fruit damage.",
+        "when_it_occurs": "Not applicable.",
+        "what_it_indicates": "The model did not detect a disease pattern."
+      }
+    ],
+    "root_or_tuber_symptoms": [
+      "Not applicable for this disease."
+    ],
+    "root_or_tuber_symptom_explanations": [
+      {
+        "symptom": "Not applicable for this disease.",
+        "why_it_occurs": "This is a leaf-only image classification and no root issue is indicated.",
+        "when_it_occurs": "Not applicable.",
+        "what_it_indicates": "No disease signal is visible in the image."
+      }
+    ],
+    "advanced_symptoms": [
+      "No disease progression is indicated."
+    ],
+    "disease_progression": "No disease progression is indicated by the model for this image.",
+    "identification": [
+      "Healthy green leaf appearance",
+      "No diagnostic lesion pattern",
+      "No obvious chlorosis, spotting or collapse"
+    ],
+    "similar_conditions": [
+      "Nutrient stress",
+      "Water stress",
+      "Pest feeding or environmental damage"
+    ],
+    "monitoring": [
+      "Continue routine crop scouting",
+      "Check for new lesions, discoloration or insect damage",
+      "Review watering and nutrition when symptoms appear"
+    ],
+    "natural_prevention": [
+      "Maintain balanced crop nutrition",
+      "Use healthy transplants",
+      "Keep the canopy airy and well managed"
+    ],
+    "cultural_prevention": [
+      "Inspect regularly",
+      "Water appropriately",
+      "Remove suspected weak plants if problems appear"
+    ],
+    "management": [
+      "Maintain good crop hygiene",
+      "Keep routine scouting active",
+      "Respond quickly to any early signs of stress or pest injury"
+    ],
+    "what_to_avoid": [
+      "Ignoring new symptoms simply because one image was classified as healthy"
+    ],
+    "when_to_seek_expert_help": "Seek advice if any lesions, unusual yellowing, wilting or pest damage appear after the image was taken.",
+    "important_note": "No disease was detected by the model for this class, but healthy classification is limited to the trained model and the uploaded image.",
+    "sources": []
+  },
+  "Potato___Early_blight": {
+    "crop": "Potato",
+    "condition": "Potato Early Blight",
+    "disease_type": "Fungal disease",
+    "causal_agent": "Alternaria solani and Alternaria tomatophila",
+    "pathogen_group": "Fungi",
+    "scientific_name": "Alternaria solani / Alternaria tomatophila",
+    "definition": "A common foliar potato disease that begins on older lower leaves and can reduce canopy function and yield under moist, warm conditions.",
+    "detailed_description": "Early blight is a fungal disease that usually starts on the lower, older foliage. It is favored by warm conditions, high humidity and the persistence of leaf wetness after rainfall or irrigation.",
+    "disease_triangle": {
+      "pathogen": "Alternaria fungi survive in infected residue and can infect healthy foliage under favorable conditions.",
+      "host": "Potato plants with mature lower leaves are especially vulnerable as the disease cycle progresses.",
+      "environment": "Warm weather, periodic moisture and prolonged humidity create a favorable window for infection and lesion development."
+    },
+    "why_it_occurs": "The pathogen infects older leaves when leaves remain wet and the environment favors fungal growth, allowing lesions to expand and spread within the canopy.",
+    "how_it_starts": "Infection commonly begins on lower leaves, where spores germinate on wet tissue and establish early lesions.",
+    "disease_cycle": "Infected debris or plant material -> spore spread -> leaf infection -> lesion formation -> secondary spore production -> further canopy spread under moisture and humidity.",
+    "how_it_spreads": [
+      "Spores move by wind, splashing water and crop contact.",
+      "Infected debris can serve as a continuing source of inoculum.",
+      "Dense canopies and wet conditions help the disease expand."
+    ],
+    "favorable_conditions": [
+      "Warm to moderate temperatures",
+      "Relative humidity and dew",
+      "Leaf wetness",
+      "Dense canopies with poor airflow"
+    ],
+    "unfavorable_conditions": [
+      "Dry foliage",
+      "Good airflow",
+      "Healthy crop hygiene and residue removal"
+    ],
+    "environmental_risk": "Repeated wet periods allow the fungal pathogen to reproduce and infect new tissue, increasing lesion density and canopy loss.",
+    "early_symptoms": [
+      "Small dark spots on lower leaves",
+      "Brown lesions with target-like rings",
+      "Some yellowing around lesions"
+    ],
+    "symptom_explanations": [
+      {
+        "symptom": "Dark, target-like leaf lesions",
+        "why_it_occurs": "The fungus damages cells in concentric rings as infection expands outward.",
+        "when_it_occurs": "This typically appears as lesions mature on lower leaves during warm wet periods.",
+        "what_it_indicates": "The lesion pattern indicates active fungal growth and disease progression."
+      }
+    ],
+    "leaf_symptoms": [
+      "Dark lesions with concentric rings",
+      "Yellowing around lesions",
+      "Premature defoliation in severe cases"
+    ],
+    "leaf_symptom_explanations": [
+      {
+        "symptom": "Concentric rings on lesions",
+        "why_it_occurs": "The fungus grows in a repeating pattern as tissues cycle through infection and tissue collapse.",
+        "when_it_occurs": "Lesions mature as the disease progresses under favorable weather.",
+        "what_it_indicates": "The pattern points to early blight rather than unrelated nutrient or mechanical damage."
+      }
+    ],
+    "stem_symptoms": [
+      "Dark lesions may appear on stems under severe infection."
+    ],
+    "stem_symptom_explanations": [
+      {
+        "symptom": "Stem lesions",
+        "why_it_occurs": "Fungal colonization can extend into stems as the disease intensifies.",
+        "when_it_occurs": "This usually happens later in the season under strong pressure.",
+        "what_it_indicates": "Significant disease pressure and reduced plant function."
+      }
+    ],
+    "fruit_symptoms": [
+      "Not typically a major symptom in potato.",
+      "Main impact is usually on foliage and canopy."
+    ],
+    "fruit_symptom_explanations": [
+      {
+        "symptom": "Not typically a major symptom in potato.",
+        "why_it_occurs": "The disease primarily colonizes foliage and does not usually create the strong fruit symptoms seen in some tomato diseases.",
+        "when_it_occurs": "Not applicable in the usual disease cycle.",
+        "what_it_indicates": "The crop is primarily suffering foliar stress rather than fruit disease."
+      }
+    ],
+    "root_or_tuber_symptoms": [
+      "Not a primary symptom of this disease."
+    ],
+    "root_or_tuber_symptom_explanations": [
+      {
+        "symptom": "Not a primary symptom of this disease.",
+        "why_it_occurs": "The pathogen is mainly foliar and does not usually infect tubers in the same way as late blight.",
+        "when_it_occurs": "Not applicable.",
+        "what_it_indicates": "Disease is mainly affecting the canopy."
+      }
+    ],
+    "advanced_symptoms": [
+      "Defoliation",
+      "Reduced photosynthesis",
+      "Lower yield and weaker tuber growth"
+    ],
+    "disease_progression": "Lower leaves are affected first, followed by upward spread as repeated cycles continue under warm moist conditions and the canopy becomes less healthy.",
+    "identification": [
+      "Lower-leaf lesions with concentric growth rings",
+      "Pattern begins on older foliage",
+      "Disease favored by warm wet weather"
+    ],
+    "similar_conditions": [
+      "Potato late blight",
+      "Mechanical injury",
+      "Nutrient stress"
+    ],
+    "monitoring": [
+      "Scout lower leaves before and during warm moist weather",
+      "Check lesion pattern and spread across the canopy",
+      "Look for yellowing and defoliation"
+    ],
+    "natural_prevention": [
+      "Practice crop rotation",
+      "Remove infected debris",
+      "Use healthy seed",
+      "Reduce plant stress and maintain airflow"
+    ],
+    "cultural_prevention": [
+      "Avoid overhead irrigation when practical",
+      "Promote canopy aeration",
+      "Use mulch or soil management to reduce splash",
+      "Sanitize equipment and remove waste"
+    ],
+    "management": [
+      "Use healthy planting material",
+      "Improve airflow and reduce leaf wetness",
+      "Remove infected foliage when appropriate under local guidance",
+      "Follow local agricultural-extension recommendations for fungicidal programs where relevant"
+    ],
+    "what_to_avoid": [
+      "Leaving infected residue in place",
+      "Excessive overhead irrigation",
+      "Ignoring lower-leaf lesions"
+    ],
+    "when_to_seek_expert_help": "Seek local plant-pathology guidance when disease is severe, the diagnosis is uncertain or control is failing.",
+    "important_note": "Early blight is usually managed by reducing leaf wetness and maintaining a healthy canopy, but severity varies by cultivar and weather.",
+    "sources": [
+      "https://extension.umn.edu/agriculture/specialty-crops/vegetable-farming/disease-management/early-blight-in-tomato-and-potato"
+    ]
+  },
+  "Potato___Late_blight": {
+    "crop": "Potato",
+    "condition": "Potato Late Blight",
+    "disease_type": "Water mold disease",
+    "causal_agent": "Phytophthora infestans",
+    "pathogen_group": "Oomycete",
+    "scientific_name": "Phytophthora infestans",
+    "definition": "A fast-moving potato disease that can damage foliage and tubers under cool, damp conditions and is capable of rapid epidemic spread.",
+    "detailed_description": "Late blight is favored by cool, moist weather and persists when leaves remain wet for extended periods. The disease can move rapidly during a favorable weather window and may affect both foliage and tubers.",
+    "disease_triangle": {
+      "pathogen": "P. infestans survives in infected plant material and produces spores when moisture and temperature are suitable.",
+      "host": "Potato plants are highly susceptible when conditions favor infection and tissue remains wet.",
+      "environment": "Cool, damp weather, frequent rainfall and high humidity create ideal conditions for disease spread."
+    },
+    "why_it_occurs": "The pathogen reproduces rapidly when the crop remains wet and cool, producing large numbers of spores that infect new tissue within a short time.",
+    "how_it_starts": "The disease commonly starts from infected seed tubers, volunteer plants or infected debris and then spreads rapidly through spores produced on wet leaves.",
+    "disease_cycle": "Infected seed or debris -> initial infection -> sporulation on wet leaf tissue -> wind and splash dispersal -> secondary infections -> canopy collapse and tuber infection under suitable conditions.",
+    "how_it_spreads": [
+      "Wind and rain splash disperse spores.",
+      "Wet foliage supports rapid sporulation.",
+      "Neighboring plants can become infected quickly in favorable weather."
+    ],
+    "favorable_conditions": [
+      "Cool temperatures",
+      "High humidity",
+      "Frequent rain or dew",
+      "Persistent leaf wetness"
+    ],
+    "unfavorable_conditions": [
+      "Dry weather",
+      "Low humidity",
+      "Well-managed canopy dryness"
+    ],
+    "environmental_risk": "Cool, damp conditions create a strong infection window because leaf wetness allows spores to germinate and infect plant tissue before rapid canopy collapse occurs.",
+    "early_symptoms": [
+      "Water-soaked dark leaf lesions",
+      "Patchy foliage collapse",
+      "Rapid spread in the canopy"
+    ],
+    "symptom_explanations": [
+      {
+        "symptom": "Water-soaked dark lesions on leaves",
+        "why_it_occurs": "The pathogen infects leaf tissue and breaks down cell integrity, producing a water-soaked appearance.",
+        "when_it_occurs": "This occurs when wet, cool conditions favor the pathogen.",
+        "what_it_indicates": "The crop is in an active epidemic phase and disease can spread rapidly."
+      }
+    ],
+    "leaf_symptoms": [
+      "Large irregular dark blotches",
+      "Green-gray lesion margins",
+      "Rapid tissue collapse"
+    ],
+    "leaf_symptom_explanations": [
+      {
+        "symptom": "Large irregular dark blotches",
+        "why_it_occurs": "Cells are infected and lose function rapidly, causing a large necrotic area that expands quickly.",
+        "when_it_occurs": "These lesions enlarge rapidly during cool wet weather.",
+        "what_it_indicates": "The disease has moved beyond a simple lesion stage and may be causing rapid defoliation."
+      }
+    ],
+    "stem_symptoms": [
+      "Dark lesions may develop on stems."
+    ],
+    "stem_symptom_explanations": [
+      {
+        "symptom": "Dark stem lesions",
+        "why_it_occurs": "The pathogen may colonize stem tissue during severe outbreaks.",
+        "when_it_occurs": "This occurs in more advanced infection phases.",
+        "what_it_indicates": "The epidemic is severe and disease pressure is high."
+      }
+    ],
+    "fruit_symptoms": [
+      "Not a primary symptom on potato foliage but tubers may be affected."
+    ],
+    "fruit_symptom_explanations": [
+      {
+        "symptom": "Tubers become diseased",
+        "why_it_occurs": "Spores may infect tubers in wet soils or when infected foliage and debris contaminate the crop.",
+        "when_it_occurs": "This happens in more advanced disease cycles and severe outbreaks.",
+        "what_it_indicates": "The disease has progressed beyond foliar infection and storage quality may be at risk."
+      }
+    ],
+    "root_or_tuber_symptoms": [
+      "Tubers may show brown to purple discoloration and decay"
+    ],
+    "root_or_tuber_symptom_explanations": [
+      {
+        "symptom": "Tubers show discoloration and decay",
+        "why_it_occurs": "The pathogen persists in affected tissue and can infect tubers under conducive soil and weather conditions.",
+        "when_it_occurs": "This is more common in severe disease situations or when conditions remain wet.",
+        "what_it_indicates": "Disease has reached a severe stage and tuber quality is at risk."
+      }
+    ],
+    "advanced_symptoms": [
+      "Rapid defoliation",
+      "Plant collapse",
+      "Tuber decay and reduced marketability"
+    ],
+    "disease_progression": "The epidemic accelerates under extended cool wet conditions, resulting in rapid defoliation, reduced photosynthesis and possible tuber infection or decay.",
+    "identification": [
+      "Rapidly expanding dark lesions in cool wet weather",
+      "Irregular blotches on foliage",
+      "Spread across the crop canopy"
+    ],
+    "similar_conditions": [
+      "Early blight",
+      "Stress injury",
+      "Other foliar blights"
+    ],
+    "monitoring": [
+      "Scout frequently during cool wet weather",
+      "Inspect stems, leaves and tubers for symptom progression",
+      "Watch for rapidly expanding lesions"
+    ],
+    "natural_prevention": [
+      "Use healthy seed potatoes",
+      "Remove volunteer plants and infected cull material",
+      "Avoid spread from infected sites to healthy crop",
+      "Practice sanitation and crop rotation"
+    ],
+    "cultural_prevention": [
+      "Manage canopy moisture to reduce prolonged wet leaf periods",
+      "Improve airflow",
+      "Remove or isolate infected plants if appropriate",
+      "Manage cull piles away from fields"
+    ],
+    "management": [
+      "Use disease-free seed or planting material",
+      "Monitor weather and disease pressure closely",
+      "Remove infected material according to local guidance",
+      "Follow local extension recommendations for late blight management"
+    ],
+    "what_to_avoid": [
+      "Leaving infected cull piles near crops",
+      "Moving infected plant material into healthy fields",
+      "Ignoring rapid epidemic spread"
+    ],
+    "when_to_seek_expert_help": "Seek prompt agricultural or extension advice when disease is spreading rapidly or when tuber disease is suspected.",
+    "important_note": "Potato late blight can progress quickly; disease development is strongly weather-driven and may need rapid management action.",
+    "sources": [
+      "https://extension.umn.edu/agriculture/specialty-crops/vegetable-farming/disease-management/late-blight",
+      "https://extension.psu.edu/tomato-potato-late-blight-in-the-home-garden"
+    ]
+  },
+  "Potato___healthy": {
+    "crop": "Potato",
+    "condition": "Healthy Potato Plant",
+    "disease_type": "Healthy model class",
+    "causal_agent": "No disease-causing organism detected by the model.",
+    "pathogen_group": "Not applicable",
+    "scientific_name": "Healthy potato phenotype",
+    "definition": "The model classified this potato image as healthy within the trained classes. This does not guarantee that the whole crop is disease-free, but it does not show a disease-specific visual pattern in the uploaded image.",
+    "detailed_description": "Healthy potato foliage usually has a normal green color, regular tissue structure and no typical pathogen lesions. The model result indicates the photo is consistent with healthy potato examples in the training set.",
+    "disease_triangle": {
+      "pathogen": "No active disease signal is indicated.",
+      "host": "The potato canopy appears healthy and intact.",
+      "environment": "Conditions are consistent with a healthy plant canopy in the analyzed image."
+    },
+    "why_it_occurs": "The image did not show a characteristic disease pattern or lesion pattern associated with potato disease classes.",
+    "how_it_starts": "Healthy potato plants do not show pathogen-driven necrosis or disease progression in this image.",
+    "disease_cycle": "Not applicable for a healthy classification.",
+    "how_it_spreads": [
+      "No disease spread is indicated."
+    ],
+    "favorable_conditions": [
+      "Balanced soil moisture",
+      "Adequate nutrition",
+      "Good canopy health",
+      "Routine crop scouting"
+    ],
+    "unfavorable_conditions": [
+      "New lesions",
+      "Wilting",
+      "Abnormal yellowing or defoliation"
+    ],
+    "environmental_risk": "The major risk is missing a new symptom later in the season if scouting is not continued.",
+    "early_symptoms": [
+      "No disease-specific symptoms were selected by the model."
+    ],
+    "symptom_explanations": [
+      {
+        "symptom": "Healthy green foliage",
+        "why_it_occurs": "The plant is maintaining normal tissue function and chlorophyll health.",
+        "when_it_occurs": "This is consistent with healthy crop growth.",
+        "what_it_indicates": "There is no strong disease signal in the image."
+      }
+    ],
+    "leaf_symptoms": [
+      "No disease-specific symptoms were selected by the model."
+    ],
+    "leaf_symptom_explanations": [
+      {
+        "symptom": "No disease-specific symptoms were selected by the model.",
+        "why_it_occurs": "The image aligns with healthy foliage.",
+        "when_it_occurs": "During normal growth.",
+        "what_it_indicates": "No disease response is visible in the image."
+      }
+    ],
+    "stem_symptoms": [
+      "Not applicable for this healthy-class image."
+    ],
+    "disease_progression": "No disease progression is indicated for this image.",
+    "identification": [
+      "Normal green foliage",
+      "No unusual lesion pattern",
+      "No obvious disease symptoms in the analyzed image"
+    ],
+    "similar_conditions": [
+      "Water stress",
+      "Nutrient stress",
+      "Insect feeding or environmental injury"
+    ],
+    "monitoring": [
+      "Continue normal agronomic monitoring",
+      "Keep checking for spotting, yellowing or early lesions",
+      "Watch for weather-driven disease risk"
+    ],
+    "natural_prevention": [
+      "Maintain balanced nutrition",
+      "Use healthy seed",
+      "Avoid excessive canopy stress"
+    ],
+    "cultural_prevention": [
+      "Maintain irrigation and soil management",
+      "Keep records of crop health",
+      "Scout regularly"
+    ],
+    "management": [
+      "Continue routine crop care",
+      "Respond quickly to any emerging symptom",
+      "Maintain sanitation and crop hygiene"
+    ],
+    "what_to_avoid": [
+      "Ignoring new symptoms simply because one image was classified as healthy"
+    ],
+    "when_to_seek_expert_help": "Seek agricultural advice if new spots, yellowing or wilt appear at any time after the image was taken.",
+    "important_note": "Healthy classification is limited to the trained model and the uploaded image.",
+    "sources": []
+  },
+  "Tomato_Bacterial_spot": {
+    "crop": "Tomato",
+    "condition": "Tomato Bacterial Spot",
+    "disease_type": "Bacterial disease",
+    "causal_agent": "Xanthomonas species",
+    "pathogen_group": "Bacteria",
+    "scientific_name": "Xanthomonas spp.",
+    "definition": "A bacterial disease of tomato leaves, stems and fruit that is favored by warm wet weather and can reduce fruit quality and canopy function.",
+    "detailed_description": "Tomato bacterial spot often begins on leaf tissue and can progress rapidly when leaves stay wet. The bacteria spread through splashing water, contaminated tools and handling, especially in warm humid conditions.",
+    "disease_triangle": {
+      "pathogen": "Xanthomonas bacteria infect tomato tissue when weather remains warm and wet.",
+      "host": "Susceptible tomato plants and transplants allow the pathogen to establish.",
+      "environment": "Warm temperatures, humidity and leaf wetness create an environment favorable for bacterial infection and spread."
+    },
+    "why_it_occurs": "The pathogen enters leaves and fruit under wet conditions and can multiply rapidly when the canopy stays moist and the crop is crowded.",
+    "how_it_starts": "Disease often begins on affected transplants, infected debris or neighboring plants and spreads via rain splash and contaminated handling.",
+    "disease_cycle": "Infected transplants or residue -> initial leaf infection -> bacterial multiplication in wet tissue -> lesion development -> spread by splash or handling -> secondary infection cycles.",
+    "how_it_spreads": [
+      "Rain splash disperses bacteria.",
+      "Hands, tools and crop handling can spread inoculum.",
+      "Infected transplants can introduce the disease to new fields."
+    ],
+    "favorable_conditions": [
+      "Warm weather",
+      "High humidity",
+      "Leaf wetness",
+      "Overhead irrigation",
+      "Crowded canopies"
+    ],
+    "unfavorable_conditions": [
+      "Dry foliage",
+      "Good airflow",
+      "Base watering and crop hygiene"
+    ],
+    "environmental_risk": "Warm wet weather strongly favors bacterial multiplication and spread, making new lesions appear rapidly after rainfall or heavy dew.",
+    "early_symptoms": [
+      "Small brown circular spots on leaves",
+      "Potential yellow halos around lesions"
+    ],
+    "symptom_explanations": [
+      {
+        "symptom": "Small circular leaf spots",
+        "why_it_occurs": "The bacteria cause localized tissue death and nutrient disruption inside the leaf.",
+        "when_it_occurs": "Symptoms appear after infection has established, typically in warm wet weather.",
+        "what_it_indicates": "The lesion indicates the leaf is affected and the pathogen is active."
+      }
+    ],
+    "leaf_symptoms": [
+      "Brown lesions",
+      "Possible yellow halo",
+      "Defoliation under severe pressure"
+    ],
+    "leaf_symptom_explanations": [
+      {
+        "symptom": "Brown lesions with yellow halos",
+        "why_it_occurs": "The bacteria damage leaf tissue and trigger a host response that creates chlorotic tissue around lesions.",
+        "when_it_occurs": "This is common during humid wet periods.",
+        "what_it_indicates": "Active bacterial infection is reducing leaf function."
+      }
+    ],
+    "stem_symptoms": [
+      "Small lesions may occur on stems and petioles."
+    ],
+    "stem_symptom_explanations": [
+      {
+        "symptom": "Lesions on stems or petioles",
+        "why_it_occurs": "The pathogen can invade vascular or cortical tissue when the infection is established.",
+        "when_it_occurs": "This typically appears once the epidemic is underway.",
+        "what_it_indicates": "Disease severity is increasing."
+      }
+    ],
+    "fruit_symptoms": [
+      "Raised rough scabby lesions",
+      "Fruit quality loss"
+    ],
+    "fruit_symptom_explanations": [
+      {
+        "symptom": "Raised scabby lesions on fruit",
+        "why_it_occurs": "Fruit tissues are infected and become corky or rough as the bacteria damage cell structure.",
+        "when_it_occurs": "This usually appears after infection has spread through the crop canopy.",
+        "what_it_indicates": "The crop has a substantial disease burden and market quality is at risk."
+      }
+    ],
+    "root_or_tuber_symptoms": [
+      "Not applicable for this disease."
+    ],
+    "disease_progression": "Leaf lesions continue to expand and fruit can become damaged as the pathogen spreads under wet warm conditions and the canopy remains highly favorable.",
+    "identification": [
+      "Leaf lesions with yellow margins",
+      "Warm wet weather conditions",
+      "Fruit scab symptoms can support identification"
+    ],
+    "similar_conditions": [
+      "Early blight",
+      "Target spot",
+      "Septoria leaf spot"
+    ],
+    "monitoring": [
+      "Scout transplants before planting",
+      "Inspect lower and inter-canopy leaves in wet weather",
+      "Check fruit for scab-like lesions"
+    ],
+    "natural_prevention": [
+      "Use clean transplants",
+      "Remove infected residue",
+      "Reduce volunteer hosts",
+      "Maintain canopy airflow"
+    ],
+    "cultural_prevention": [
+      "Water at the base",
+      "Avoid overhead irrigation",
+      "Sanitize pruning tools and hands",
+      "Remove severely affected tissue according to guidance"
+    ],
+    "management": [
+      "Use healthy planting material",
+      "Reduce leaf wetness",
+      "Promote airflow",
+      "Prune and manage canopy density",
+      "Follow local extension recommendations where control products are appropriate"
+    ],
+    "what_to_avoid": [
+      "Handling wet foliage",
+      "Moving contaminated equipment between rows",
+      "Overhead irrigation under warm humid conditions"
+    ],
+    "when_to_seek_expert_help": "Seek agricultural advice if the disease spreads rapidly, the diagnosis is uncertain, or the crop is near harvest and fruit quality is affected.",
+    "important_note": "This is an image-driven model classification and not a lab-confirmed diagnosis.",
+    "sources": [
+      "https://extension.umn.edu/agriculture/specialty-crops/vegetable-farming/disease-management/bacterial-spot-of-tomato-and-pepper"
+    ]
+  },
+  "Tomato_Early_blight": {
+    "crop": "Tomato",
+    "condition": "Tomato Early Blight",
+    "disease_type": "Fungal disease",
+    "causal_agent": "Alternaria tomatophila and Alternaria solani",
+    "pathogen_group": "Fungi",
+    "scientific_name": "Alternaria spp.",
+    "definition": "A common leaf and fruit disease of tomato in which older leaves are attacked first and disease severity rises under warm, wet conditions.",
+    "detailed_description": "Early blight is favored by humid weather, dew and leaf wetness. It often starts on lower, older tomato foliage before moving upward into the crop canopy.",
+    "disease_triangle": {
+      "pathogen": "Alternaria fungi survive on crop debris and cause new infections when leaves remain wet.",
+      "host": "Tomato plants with mature leaves and a dense canopy are vulnerable.",
+      "environment": "Warm temperatures, humidity and frequent leaf wetness make infection and lesion expansion likely."
+    },
+    "why_it_occurs": "The fungi infect lower leaves under warm wet conditions and repeat infections continue as the disease cycle renews in the canopy.",
+    "how_it_starts": "The disease typically begins on older leaves near the ground and then spreads upward as infected tissue produces new inoculum.",
+    "disease_cycle": "Crop residue or infected volunteer material -> spore dispersal -> lower-leaf infection -> lesion development -> repeated sporulation -> cluster spread across the canopy.",
+    "how_it_spreads": [
+      "Spores spread by wind and splashing water.",
+      "Infected debris can contribute to the next cycle.",
+      "Dense wet canopies increase spread."
+    ],
+    "favorable_conditions": [
+      "Warm weather",
+      "High humidity",
+      "Leaf wetness",
+      "Dense canopy"
+    ],
+    "unfavorable_conditions": [
+      "Dry foliage",
+      "Good airflow",
+      "Crop sanitation"
+    ],
+    "environmental_risk": "Warm wet weather enables repeated cycles of infection and lesion expansion, which can lead to rapid defoliation in susceptible crops.",
+    "early_symptoms": [
+      "Small dark lesions on older lower leaves",
+      "Target-like ring pattern in mature lesions"
+    ],
+    "symptom_explanations": [
+      {
+        "symptom": "Target-like mature lesions",
+        "why_it_occurs": "The fungus creates concentric lesion zones as tissue necrosis expands outward from the original infection site.",
+        "when_it_occurs": "This is especially common on mature lower leaves under warm, wet conditions.",
+        "what_it_indicates": "The plant is under active fungal disease pressure and lesions are continuing to expand."
+      }
+    ],
+    "leaf_symptoms": [
+      "Brown circular spots",
+      "Concentric rings",
+      "Yellowing around lesions",
+      "Defoliation"
+    ],
+    "leaf_symptom_explanations": [
+      {
+        "symptom": "Concentric lesion rings",
+        "why_it_occurs": "The fungal colony expands in a radial pattern, creating rings as tissues die and the pathogen keeps advancing.",
+        "when_it_occurs": "This occurs as lesions mature in humid weather.",
+        "what_it_indicates": "The disease is established and the plant is losing leaf function."
+      }
+    ],
+    "stem_symptoms": [
+      "Sunken or dark lesions can occur on stems under severe pressure."
+    ],
+    "stem_symptom_explanations": [
+      {
+        "symptom": "Sunken stem lesions",
+        "why_it_occurs": "Stem tissue can be colonized when spore pressure is high and the canopy remains wet.",
+        "when_it_occurs": "This usually appears later in severe disease outbreaks.",
+        "what_it_indicates": "Disease severity is increasing and the crop may be under substantial stress."
+      }
+    ],
+    "fruit_symptoms": [
+      "Dark leathery lesions near the stem end, often with concentric ridges"
+    ],
+    "fruit_symptom_explanations": [
+      {
+        "symptom": "Leathery dark lesions on fruit",
+        "why_it_occurs": "Fruit tissue becomes infected when spores land on susceptible tissues and the environment remains suitable.",
+        "when_it_occurs": "This occurs after disease has established in the canopy and wet conditions persist.",
+        "what_it_indicates": "Fruit quality is being compromised and the crop is at higher disease risk."
+      }
+    ],
+    "root_or_tuber_symptoms": [
+      "Not a primary symptom of early blight."
+    ],
+    "disease_progression": "The disease typically advances from the oldest foliage upward, causing reduced photosynthesis and fruit losses as lesions coalesce and the canopy declines.",
+    "identification": [
+      "Concentric-ring lesions on older lower leaves",
+      "Warm wet weather support",
+      "Disease starts on lower canopy"
+    ],
+    "similar_conditions": [
+      "Tomato bacterial spot",
+      "Target spot",
+      "Septoria leaf spot"
+    ],
+    "monitoring": [
+      "Inspect older lower leaves regularly",
+      "Monitor canopy density and humidity",
+      "Check fruit for dark lesions after infection becomes established"
+    ],
+    "natural_prevention": [
+      "Clean transplants",
+      "Remove infected debris",
+      "Crop rotation where practical",
+      "Manage volunteer tomatoes"
+    ],
+    "cultural_prevention": [
+      "Water at the base",
+      "Increase spacing and airflow",
+      "Use mulch to reduce soil splash",
+      "Remove severely infected leaves when appropriate"
+    ],
+    "management": [
+      "Use healthy transplants ",
+      "Improve airflow and reduce moisture",
+      "Remove infected leaves as appropriate",
+      "Follow local extension recommendations for fungicide use if needed"
+    ],
+    "what_to_avoid": [
+      "Leaving infected debris in the field",
+      "Overhead irrigation when avoidable",
+      "Ignoring lower-leaf lesions"
+    ],
+    "when_to_seek_expert_help": "Seek local agricultural guidance when symptoms progress rapidly, fruit lesions appear, or disease pressure is high.",
+    "important_note": "Early blight severity depends on cultivar, environment and canopy health.",
+    "sources": [
+      "https://extension.umn.edu/agriculture/specialty-crops/vegetable-farming/disease-management/early-blight-in-tomato-and-potato"
+    ]
+  },
+  "Tomato_Late_blight": {
+    "crop": "Tomato",
+    "condition": "Tomato Late Blight",
+    "disease_type": "Water mold disease",
+    "causal_agent": "Phytophthora infestans",
+    "pathogen_group": "Oomycete",
+    "scientific_name": "Phytophthora infestans",
+    "definition": "A destructive tomato disease that can damage foliage, stems and fruit under cool, wet conditions and can spread rapidly when weather remains favorable.",
+    "detailed_description": "Tomato late blight thrives under cool, wet weather and can move through a crop quickly. It can cause large dark lesions and severe reduction in canopy health when conditions remain moist and conducive.",
+    "disease_triangle": {
+      "pathogen": "P. infestans reproduces rapidly in wet leaves and infected debris.",
+      "host": "Tomato plants are highly susceptible when tissue remains wet and conditions are cool.",
+      "environment": "Cool temperatures, high humidity and prolonged wetness create a severe disease window."
+    },
+    "why_it_occurs": "The pathogen produces large numbers of spores under cool damp conditions, and the rapid cycling between infected and healthy tissue causes epidemic spread.",
+    "how_it_starts": "Disease can enter a field from infected transplants, volunteer hosts or nearby infected plant material and then spread rapidly through the crop canopy.",
+    "disease_cycle": "Infected material -> initial lesion -> spore production on wet leaves -> airborne or splash spread -> repeated infection cycles -> fruit and canopy collapse under favorable weather.",
+    "how_it_spreads": [
+      "Spores move by wind and weather-driven spread.",
+      "Rain splash can help spread inoculum locally.",
+      "Wet weather increases secondary infection rates."
+    ],
+    "favorable_conditions": [
+      "Cool temperatures",
+      "High humidity",
+      "Long leaf wetness periods",
+      "Cloudy, damp weather"
+    ],
+    "unfavorable_conditions": [
+      "Dry weather",
+      "Low humidity",
+      "Good canopy drying"
+    ],
+    "environmental_risk": "A few days of cool wet weather can be enough to trigger rapid epidemic spread once lesions are established.",
+    "early_symptoms": [
+      "Water-soaked dark lesions on leaves",
+      "Lesions expanding quickly under cool wet weather"
+    ],
+    "symptom_explanations": [
+      {
+        "symptom": "Water-soaked dark lesions",
+        "why_it_occurs": "The oomycete infects and kills tissue rapidly when leaf surfaces stay wet and cool.",
+        "when_it_occurs": "This appears in cool wet weather and after the first infection cycle is established.",
+        "what_it_indicates": "The crop is entering a rapid epidemic stage."
+      }
+    ],
+    "leaf_symptoms": [
+      "Large dark blotches",
+      "Rapid tissue collapse",
+      "Green-gray lesion margins"
+    ],
+    "leaf_symptom_explanations": [
+      {
+        "symptom": "Large dark blotches",
+        "why_it_occurs": "Infected tissue loses function quickly, producing broad necrotic regions that expand as new spores form.",
+        "when_it_occurs": "This happens during favorable weather and active secondary cycles.",
+        "what_it_indicates": "The disease is severe and canopy function is rapidly declining."
+      }
+    ],
+    "stem_symptoms": [
+      "Dark brown stem lesions may occur in severe outbreaks."
+    ],
+    "stem_symptom_explanations": [
+      {
+        "symptom": "Dark stem lesions",
+        "why_it_occurs": "The pathogen can infect vascular or cortical tissue when disease pressure is severe.",
+        "when_it_occurs": "This occurs later, often in heavily infected canopies.",
+        "what_it_indicates": "The disease is not limited to leaf tissue and the plant is under severe stress."
+      }
+    ],
+    "fruit_symptoms": [
+      "Firm dark-brown lesions on fruit",
+      "Secondary decay may follow"
+    ],
+    "fruit_symptom_explanations": [
+      {
+        "symptom": "Firm dark-brown lesions on fruit",
+        "why_it_occurs": "Fruit tissues are invaded and lose integrity when the disease is active.",
+        "when_it_occurs": "This occurs during severe wet conditions and epidemic progression.",
+        "what_it_indicates": "Fruit can be lost to disease or secondary decay."
+      }
+    ],
+    "root_or_tuber_symptoms": [
+      "Not a primary symptom in tomato late blight, though fruit quality losses are important."
+    ],
+    "disease_progression": "Once the epidemic begins, the disease can intensify quickly as conditions remain cool and wet, which may lead to major canopy loss and fruit infection.",
+    "identification": [
+      "Large dark irregular lesions with rapid spread",
+      "Cool damp weather disease pattern",
+      "Fruit lesions accompanying canopy collapse"
+    ],
+    "similar_conditions": [
+      "Target spot",
+      "Early blight",
+      "Bacterial leaf spot"
+    ],
+    "monitoring": [
+      "Scout frequently during cool wet weather",
+      "Inspect leaves, stems and fruit for rapid changes",
+      "Watch for lesion expansion during high humidity"
+    ],
+    "natural_prevention": [
+      "Use healthy transplants",
+      "Remove infected crop residue",
+      "Manage volunteers and nearby diseased hosts",
+      "Improve airflow and sanitation"
+    ],
+    "cultural_prevention": [
+      "Avoid prolonged leaf wetness",
+      "Increase spacing and ventilation",
+      "Remove infected material promptly",
+      "Keep field hygiene strong"
+    ],
+    "management": [
+      "Use healthy transplants",
+      "Monitor weather and disease pressure closely",
+      "Remove infected material according to local guidance",
+      "Follow local extension recommendations for disease management programs"
+    ],
+    "what_to_avoid": [
+      "Ignoring rapidly expanding lesions",
+      "Moving infected material to clean areas",
+      "Assuming all dark blotches are harmless"
+    ],
+    "when_to_seek_expert_help": "Seek prompt local extension or disease-management advice when rapid spread occurs or symptoms increase despite field hygiene measures.",
+    "important_note": "Late blight can spread rapidly; rapid assessment is important under cool wet conditions.",
+    "sources": [
+      "https://extension.umn.edu/agriculture/specialty-crops/vegetable-farming/disease-management/late-blight",
+      "https://extension.psu.edu/tomato-potato-late-blight-in-the-home-garden"
+    ]
+  },
+  "Tomato_Leaf_Mold": {
+    "crop": "Tomato",
+    "condition": "Tomato Leaf Mold",
+    "disease_type": "Fungal disease",
+    "causal_agent": "Passalora fulva",
+    "pathogen_group": "Fungi",
+    "scientific_name": "Passalora fulva",
+    "definition": "A foliar fungal disease of tomato favored by high humidity and dense plant canopies, especially in protected cultivation.",
+    "detailed_description": "Leaf mold develops when relative humidity remains high and leaf surfaces stay wet for prolonged periods. It is commonly associated with dense canopies and poor ventilation in greenhouses or tunnels.",
+    "disease_triangle": {
+      "pathogen": "Passalora fulva infects tomato foliage when humidity stays high and the pathogen can reproduce on leaf tissue.",
+      "host": "Tomato plants with dense canopy structure and poor airflow are highly susceptible.",
+      "environment": "High humidity and poor ventilation create the most favorable conditions for infection and spread."
+    },
+    "why_it_occurs": "The fungus reproduces well when relative humidity stays high and the foliage remains moist, leading to repeated infections and a large number of spores on the lower leaf surface.",
+    "how_it_starts": "Infection usually starts on older lower leaves beneath a dense canopy and can continue upward when conditions remain humid.",
+    "disease_cycle": "Leaf infection -> sporulation on lower leaf surfaces -> spore release -> infection of adjacent leaf surfaces under high humidity -> repeated cycles in dense canopies.",
+    "how_it_spreads": [
+      "Spores disperse through air movement within the canopy.",
+      "High humidity supports repeated sporulation.",
+      "Dense canopies maintain favorable conditions."
+    ],
+    "favorable_conditions": [
+      "High relative humidity",
+      "Poor ventilation",
+      "Dense foliage",
+      "Prolonged leaf wetness"
+    ],
+    "unfavorable_conditions": [
+      "Dry foliage",
+      "Good air movement",
+      "Reduced canopy density"
+    ],
+    "environmental_risk": "High humidity and reduced airflow keep surfaces wet and allow the fungus to repeat its infection cycle across the canopy.",
+    "early_symptoms": [
+      "Pale yellow spots on upper leaf surfaces",
+      "Olive-green velvety growth on undersides"
+    ],
+    "symptom_explanations": [
+      {
+        "symptom": "Pale yellow spots on upper leaf surfaces",
+        "why_it_occurs": "The fungus infects the tissue and the host responds with a visible yellowing around lesions.",
+        "when_it_occurs": "Symptoms appear as the disease develops in humid or poorly ventilated conditions.",
+        "what_it_indicates": "The disease is active and the canopy environment is strongly favoring pathogen reproduction."
+      }
+    ],
+    "leaf_symptoms": [
+      "Yellow spots on upper surface",
+      "Olive-gray velvety growth on underside",
+      "Leaves may wither and stay attached"
+    ],
+    "leaf_symptom_explanations": [
+      {
+        "symptom": "Velvety olive growth on leaf undersides",
+        "why_it_occurs": "The pathogen forms spore-bearing structures on the lower leaf surface under favorable humidity.",
+        "when_it_occurs": "This occurs after infection is established and high humidity persists.",
+        "what_it_indicates": "The disease is reproducing and can spread to neighboring tissues."
+      }
+    ],
+    "stem_symptoms": [
+      "Not usually a major symptom."
+    ],
+    "fruit_symptoms": [
+      "Some fruit lesions can occur in severe infections."
+    ],
+    "disease_progression": "The disease usually moves from lower leaves upward as humidity remains high and infected tissue continues to produce spores.",
+    "identification": [
+      "Yellow upper-side leaf spots with olive growth beneath leaves",
+      "High humidity or protected cultivation",
+      "Poor ventilation in the canopy"
+    ],
+    "similar_conditions": [
+      "Early blight",
+      "Septoria leaf spot",
+      "Other humid-canopy diseases"
+    ],
+    "monitoring": [
+      "Inspect lower leaf surfaces for velvety growth",
+      "Monitor humidity and ventilation in protected crops",
+      "Review canopy density and irrigation practices"
+    ],
+    "natural_prevention": [
+      "Improve ventilation",
+      "Keep relative humidity lower where possible",
+      "Remove infected foliage",
+      "Use sanitation in protected houses"
+    ],
+    "cultural_prevention": [
+      "Use drip irrigation instead of overhead watering",
+      "Avoid dense canopies and rapid wetness accumulation",
+      "Prune or train plants to improve airflow",
+      "Clean structures and tools"
+    ],
+    "management": [
+      "Improve ventilation and reduce humidity",
+      "Remove severely infected leaves appropriately",
+      "Train plants to improve air movement",
+      "Follow local extension recommendations for disease management"
+    ],
+    "what_to_avoid": [
+      "Persistent high humidity without drying periods",
+      "Dense wet foliage",
+      "Overhead irrigation in protected crop systems"
+    ],
+    "when_to_seek_expert_help": "Seek local extension advice if the problem persists despite improved ventilation and sanitation or if crop quality is declining.",
+    "important_note": "Leaf mold is particularly important in protected cultivation and can spread rapidly when humidity is excessive.",
+    "sources": [
+      "https://extension.umn.edu/agriculture/specialty-crops/vegetable-farming/disease-management/tomato-leaf-mold"
+    ]
+  },
+  "Tomato_Septoria_leaf_spot": {
+    "crop": "Tomato",
+    "condition": "Tomato Septoria Leaf Spot",
+    "disease_type": "Fungal disease",
+    "causal_agent": "Septoria lycopersici",
+    "pathogen_group": "Fungi",
+    "scientific_name": "Septoria lycopersici",
+    "definition": "A common tomato foliar disease that usually begins on lower leaves and can lead to progressive defoliation under warm, wet conditions.",
+    "detailed_description": "Septoria leaf spot is especially common on lower leaves after fruit set. It is favored by wet leaves, warm weather and a dense canopy, and repeated infection cycles can cause widespread defoliation.",
+    "disease_triangle": {
+      "pathogen": "The fungus survives on infected residue and produces spores when conditions remain favorable.",
+      "host": "Tomato foliage, especially older lower leaves, is susceptible.",
+      "environment": "Warm temperatures, humidity and prolonged leaf wetness allow repeated infection cycles."
+    },
+    "why_it_occurs": "The fungus produces many spores on infected tissue, and repeated wet periods allow it to move into new foliage quickly.",
+    "how_it_starts": "Lower leaves are commonly infected first, and disease then progresses upward when weather remains moist and the canopy remains dense.",
+    "disease_cycle": "Infected debris -> spore release -> lower leaf infection -> lesions with fruiting bodies -> repeated spore cycles -> defoliation and canopy decline.",
+    "how_it_spreads": [
+      "Water splashing disperses spores.",
+      "Wind can carry spores short distances.",
+      "Infected residue increases risk in subsequent crops."
+    ],
+    "favorable_conditions": [
+      "Warm weather",
+      "High humidity",
+      "Rain or irrigation on foliage",
+      "Dense canopy"
+    ],
+    "unfavorable_conditions": [
+      "Dry foliage",
+      "Good airflow",
+      "Careful sanitation"
+    ],
+    "environmental_risk": "Warm wet periods enable repeated cycles of infection and lead to defoliation when the disease persists.",
+    "early_symptoms": [
+      "Small dark spots on lower leaves",
+      "Tyical tan-gray centers with darker margins"
+    ],
+    "symptom_explanations": [
+      {
+        "symptom": "Dark lesions with tan centers",
+        "why_it_occurs": "The fungus kills tissue in the lesion center while the surrounding tissue remains active.",
+        "when_it_occurs": "Lesions become fully visible as the disease matures under warm wet weather.",
+        "what_it_indicates": "The crop is experiencing active fungal infection and defoliation may follow."
+      }
+    ],
+    "leaf_symptoms": [
+      "Dark spots with pale centers",
+      "Yellowing around lesions",
+      "Premature defoliation"
+    ],
+    "leaf_symptom_explanations": [
+      {
+        "symptom": "Small spots with tan centers and dark fruiting bodies",
+        "why_it_occurs": "The fungus forms fruiting structures in the tissue as it progresses through its reproduction stage.",
+        "when_it_occurs": "This occurs as the lesion matures under repeated wet periods.",
+        "what_it_indicates": "The plant is in an active infection cycle and new spores are being produced."
+      }
+    ],
+    "stem_symptoms": [
+      "Occasional petiole or stem involvement can occur under severe disease pressure."
+    ],
+    "fruit_symptoms": [
+      "Not a major symptom; fruit is typically not the primary site of infection."
+    ],
+    "disease_progression": "Usually progresses from lower leaves upward, causing yellowing, leaf death and a decline in overall plant vigor as photosynthetic tissue is lost.",
+    "identification": [
+      "Lower-leaf spots with pale centers and tiny dark fruiting points",
+      "Warm wet weather and sequential canopy spread",
+      "Progressive defoliation"
+    ],
+    "similar_conditions": [
+      "Early blight",
+      "Bacterial spot",
+      "Target spot"
+    ],
+    "monitoring": [
+      "Inspect lower leaves early and frequently",
+      "Check for lesion pattern and defoliation",
+      "Monitor humidity and irrigation management"
+    ],
+    "natural_prevention": [
+      "Crop rotation",
+      "Crop sanitation",
+      "Removal of infected debris",
+      "Use clean transplants"
+    ],
+    "cultural_prevention": [
+      "Base watering rather than overhead irrigation",
+      "Improved spacing and airflow",
+      "Mulch to reduce soil splash",
+      "Remove lower infected foliage when appropriate"
+    ],
+    "management": [
+      "Reduce extended leaf wetness",
+      "Keep the canopy open and dry",
+      "Remove infected residue",
+      "Follow local extension recommendations for disease management"
+    ],
+    "what_to_avoid": [
+      "Leaving infected debris in the crop",
+      "Overhead irrigation during susceptible periods",
+      "Ignoring lower-leaf lesions"
+    ],
+    "when_to_seek_expert_help": "Seek expert guidance if defoliation is severe, the diagnosis is uncertain or control strategies are not working.",
+    "important_note": "The disease can lead to significant defoliation, raising the risk of fruit sunscald and reduced yield.",
+    "sources": [
+      "https://extension.psu.edu/tomato-diseases-and-disorders-in-the-home-garden"
+    ]
+  },
+  "Tomato_Spider_mites_Two_spotted_spider_mite": {
+    "crop": "Tomato",
+    "condition": "Two-Spotted Spider Mite Damage",
+    "disease_type": "Mite pest",
+    "causal_agent": "Tetranychus urticae",
+    "pathogen_group": "Arthropod pest",
+    "scientific_name": "Tetranychus urticae",
+    "definition": "A mite pest that feeds on plant cells, causing stippling, bronzing and reduced vigor under hot dry conditions.",
+    "detailed_description": "Spider mites thrive under hot, dry and dusty conditions and often feed on the undersides of leaves. Infestations can build rapidly and become serious if plant stress remains high.",
+    "disease_triangle": {
+      "pathogen": "The pest reproduces quickly under hot, dry weather and high plant stress.",
+      "host": "Tomato plants under water stress or in hot dry conditions are particularly vulnerable.",
+      "environment": "Hot, dry, dusty weather and reduced humidity favor pest population growth."
+    },
+    "why_it_occurs": "Mites feed on cells and rapidly build populations when weather is dry and plants are physiologically stressed.",
+    "how_it_starts": "Infestations often begin on leaf undersides and spread as the colony increases under hot, dry conditions.",
+    "disease_cycle": "Initial feeding -> rapid population increase -> more stippling and webbing -> leaf bronzing -> defoliation under severe stress.",
+    "how_it_spreads": [
+      "Wind moves mites between plants.",
+      "Movement along plant surfaces supports spread.",
+      "Hot dry weather favors population growth."
+    ],
+    "favorable_conditions": [
+      "Hot weather",
+      "Dry conditions",
+      "Dusty environments",
+      "Plant stress"
+    ],
+    "unfavorable_conditions": [
+      "Higher humidity",
+      "Good irrigation management",
+      "Natural enemy activity"
+    ],
+    "environmental_risk": "Hot dry weather drives rapid mite multiplication and severe feeding damage, which can reduce photosynthesis and plant vigor quickly.",
+    "early_symptoms": [
+      "Fine yellow stippling on leaves",
+      "Leaf undersides may show mites or webbing"
+    ],
+    "symptom_explanations": [
+      {
+        "symptom": "Fine yellow stippling",
+        "why_it_occurs": "Mites pierce plant cells and remove chlorophyll-rich contents, causing visible pale spotting.",
+        "when_it_occurs": "This appears under hot dry conditions and on older leaves before a severe outbreak.",
+        "what_it_indicates": "The plants are being fed on and mite pressure is increasing."
+      }
+    ],
+    "leaf_symptoms": [
+      "Stippling",
+      "Yellowing",
+      "Bronzing",
+      "Premature leaf drop",
+      "Fine webbing under heavy infestation"
+    ],
+    "leaf_symptom_explanations": [
+      {
+        "symptom": "Bronzing and leaf drop",
+        "why_it_occurs": "Repeated feeding reduces leaf function, causing chlorophyll loss and premature senescence.",
+        "when_it_occurs": "This usually develops after mite populations have increased substantially.",
+        "what_it_indicates": "The plant is under intense feeding pressure and is losing photosynthetic area."
+      }
+    ],
+    "stem_symptoms": [
+      "Not a major symptom."
+    ],
+    "fruit_symptoms": [
+      "Not a major symptom for this pest."
+    ],
+    "disease_progression": "Leaf damage worsens as mite numbers increase, reducing photosynthesis and increasing plant stress, with severe outbreaks causing bronzing and leaf drop.",
+    "identification": [
+      "Stippling and webbing on leaf undersides",
+      "Hot dry weather",
+      "Mites visible with a hand lens"
+    ],
+    "similar_conditions": [
+      "Heat stress",
+      "Nutrient stress",
+      "Other leaf discoloration disorders"
+    ],
+    "monitoring": [
+      "Inspect leaf undersides with a hand lens",
+      "Monitor older leaves and newly infested zones",
+      "Check for webbing during hot dry periods"
+    ],
+    "natural_prevention": [
+      "Maintain plant vigor with proper irrigation",
+      "Conserve beneficial predatory insects",
+      "Avoid unnecessary broad-spectrum pesticide use",
+      "Reduce dusty conditions"
+    ],
+    "cultural_prevention": [
+      "Water plants consistently to reduce stress",
+      "Use integrated pest-management practices",
+      "Monitor frequently during hot dry weather",
+      "Remove severely infested leaves when appropriate"
+    ],
+    "management": [
+      "Scout regularly",
+      "Use local integrated pest-management options where appropriate",
+      "Reduce plant stress and dust",
+      "Follow local agricultural guidance for controlling mite outbreaks"
+    ],
+    "what_to_avoid": [
+      "Assuming all yellow stippling is a disease",
+      "Heavy broad-spectrum pesticide use that harms natural enemies"
+    ],
+    "when_to_seek_expert_help": "Seek local entomology or extension support when mite pressure is severe, webbing is visible or control is failing.",
+    "important_note": "This is a pest issue rather than a plant pathogen disease; the symptoms are caused by mite feeding.",
+    "sources": [
+      "https://extension.umd.edu/resource/expect-see-two-spotted-spider-mites-vegetables",
+      "https://ipm.ucanr.edu/pdf/pestnotes/pnspidermites.pdf"
+    ]
+  },
+  "Tomato__Target_Spot": {
+    "crop": "Tomato",
+    "condition": "Tomato Target Spot",
+    "disease_type": "Fungal disease",
+    "causal_agent": "Corynespora cassiicola",
+    "pathogen_group": "Fungi",
+    "scientific_name": "Corynespora cassiicola",
+    "definition": "A fungal tomato disease that can affect leaves, petioles, stems and fruit, especially in warm humid crops with dense canopies.",
+    "detailed_description": "Target spot is favored by warm, wet conditions and prolonged canopy moisture. It is notable because the symptoms can resemble early blight or bacterial spot, especially when the disease is not yet well differentiated.",
+    "disease_triangle": {
+      "pathogen": "The fungus can survive and spread in moist canopies and infected debris.",
+      "host": "Susceptible tomato foliage and fruit are most vulnerable.",
+      "environment": "Warm temperatures, humidity and prolonged leaf wetness support disease development."
+    },
+    "why_it_occurs": "The pathogen moves efficiently under warm wet canopy conditions, causing repeated lesions and tissue collapse when infection pressure remains high.",
+    "how_it_starts": "Disease often begins on older leaves or within dense canopy zones and then spreads as spores are produced on infected tissue.",
+    "disease_cycle": "Initial infection -> lesion development -> sporulation -> spread within canopy -> repeated cycles under wet warm conditions.",
+    "how_it_spreads": [
+      "Wind and rainfall move spores.",
+      "Dense canopies retain moisture and increase spread.",
+      "Infected tissues contribute inoculum for secondary cycles."
+    ],
+    "favorable_conditions": [
+      "Warm temperatures",
+      "High humidity",
+      "Leaf wetness",
+      "Dense canopy"
+    ],
+    "unfavorable_conditions": [
+      "Dry foliage",
+      "Open canopy",
+      "Good drainage and airflow"
+    ],
+    "environmental_risk": "The disease becomes more dangerous when warm wet periods persist because repeated spore cycles help lesions expand and merge.",
+    "early_symptoms": [
+      "Small dark brown spots",
+      "Target-like concentric lesions on leaves"
+    ],
+    "symptom_explanations": [
+      {
+        "symptom": "Target-like concentric lesions",
+        "why_it_occurs": "The pathogen creates a radial lesion pattern as tissue is repeatedly invaded and damaged.",
+        "when_it_occurs": "This occurs under warm humid conditions and with persistent leaf wetness.",
+        "what_it_indicates": "Disease is active and may be spreading within the crop canopy."
+      }
+    ],
+    "leaf_symptoms": [
+      "Brown lesions with concentric rings",
+      "Yellow halo may occur",
+      "Coalescing lesions and defoliation"
+    ],
+    "leaf_symptom_explanations": [
+      {
+        "symptom": "Coalescing lesions and yellow halo",
+        "why_it_occurs": "The pathogen damages more tissue over time and the surrounding plant tissues respond with chlorosis.",
+        "when_it_occurs": "This happens as the disease progresses under humid warm weather.",
+        "what_it_indicates": "The disease is substantially reducing the leaf function of the plant."
+      }
+    ],
+    "stem_symptoms": [
+      "Dark oval lesions may appear on stems."
+    ],
+    "fruit_symptoms": [
+      "Small brown sunken lesions may form on fruit",
+      "Fruit may develop pitting or cracking"
+    ],
+    "disease_progression": "Target spot typically intensifies in warm humid canopies and can eventually reduce leaf function, fruit quality and overall yield.",
+    "identification": [
+      "Target-like lesions on leaves",
+      "Warm humid weather",
+      "Potential fruit lesions and stem involvement"
+    ],
+    "similar_conditions": [
+      "Early blight",
+      "Bacterial spot",
+      "Septoria leaf spot"
+    ],
+    "monitoring": [
+      "Inspect lower and middle canopy foliage",
+      "Check fruit and stems for lesions",
+      "Monitor humidity and canopy density"
+    ],
+    "natural_prevention": [
+      "Use clean transplants",
+      "Manage weeds and volunteers",
+      "Improve canopy airflow",
+      "Practice crop residue sanitation"
+    ],
+    "cultural_prevention": [
+      "Reduce prolonged leaf wetness",
+      "Avoid dense wet canopies",
+      "Maintain field sanitation",
+      "Use healthy planting material"
+    ],
+    "management": [
+      "Use clean transplants",
+      "Improve airflow and light penetration",
+      "Remove infected plant material where appropriate",
+      "Follow local extension advice for disease management"
+    ],
+    "what_to_avoid": [
+      "Ignoring lesion overlap with early blight or bacterial spot",
+      "Leaving dense infected canopy in place",
+      "Persistent wet foliage"
+    ],
+    "when_to_seek_expert_help": "Seek local plant pathology advice when the diagnosis is uncertain or symptoms continue despite sanitation and canopy management.",
+    "important_note": "Symptoms can overlap with other tomato leaf-spot diseases, so careful comparison and local guidance are important.",
+    "sources": [
+      "https://ask.ifas.ufl.edu/publication/PP351"
+    ]
+  },
+  "Tomato__Tomato_YellowLeaf__Curl_Virus": {
+    "crop": "Tomato",
+    "condition": "Tomato Yellow Leaf Curl Virus",
+    "disease_type": "Viral disease",
+    "causal_agent": "Tomato yellow leaf curl virus (TYLCV)",
+    "pathogen_group": "Virus",
+    "scientific_name": "Begomovirus; tomato yellow leaf curl virus",
+    "definition": "A viral disease transmitted by whiteflies that causes leaf curling, yellowing, stunting and reduced reproductive development in tomato.",
+    "detailed_description": "TYLCV is spread by whiteflies and can severely reduce plant vigor and fruit yield when infected transplants are introduced or when vector populations are not managed. The disease is not caused by a fungal leaf-spot organism.",
+    "disease_triangle": {
+      "pathogen": "The virus is transmitted by whiteflies and may persist in infected plants.",
+      "host": "Susceptible tomato cultivars are highly affected.",
+      "environment": "Whitefly populations and infected transplants create the strongest risk for disease establishment."
+    },
+    "why_it_occurs": "The virus is introduced by whitefly vectors and then spreads within the crop, leading to poor leaf function and stunting.",
+    "how_it_starts": "Infection often begins after whiteflies feed on a healthy plant, or when infected transplants are introduced into a field.",
+    "disease_cycle": "Vector feeding -> virus acquisition -> transmission to healthy plants -> symptom development -> reduced growth and fruit production -> ongoing spread in presence of vectors.",
+    "how_it_spreads": [
+      "Whiteflies carry and spread the virus.",
+      "Infected transplants can introduce it.",
+      "Nearby infected volunteer hosts can maintain pressure."
+    ],
+    "favorable_conditions": [
+      "Whitefly presence",
+      "Susceptible tomato crop",
+      "Infected transplants",
+      "Warm conditions favoring whitefly activity"
+    ],
+    "unfavorable_conditions": [
+      "Effective whitefly control",
+      "Resistant varieties",
+      "Disease-free transplants"
+    ],
+    "environmental_risk": "Warm weather can favor whitefly populations and increase transmission, which raises the chance of widespread infection.",
+    "early_symptoms": [
+      "Leaf curling and small leaves",
+      "Stunted upright growth",
+      "Yellowing of young leaves"
+    ],
+    "symptom_explanations": [
+      {
+        "symptom": "Upward leaf curling and small leaves",
+        "why_it_occurs": "The virus interferes with normal plant growth and development, causing distorted leaf architecture and stunting.",
+        "when_it_occurs": "Symptoms appear after vector feeding and virus establishment.",
+        "what_it_indicates": "The plant is infected with a systemic virus and growth is being compromised."
+      }
+    ],
+    "leaf_symptoms": [
+      "Upward curling",
+      "Mottling or yellowing",
+      "Reduced leaf size",
+      "Crumpling"
+    ],
+    "leaf_symptom_explanations": [
+      {
+        "symptom": "Leaf yellowing and curling",
+        "why_it_occurs": "The virus disrupts normal chlorophyll production and leaf growth regulation.",
+        "when_it_occurs": "This appears after the virus establishes in the plant.",
+        "what_it_indicates": "The plant is systemically infected and photosynthesis may be reduced."
+      }
+    ],
+    "stem_symptoms": [
+      "Shortened internodes and stunted growth."
+    ],
+    "fruit_symptoms": [
+      "Reduced fruit set and smaller fruit due to plant stress."
+    ],
+    "disease_progression": "The plant often becomes progressively stunted as the virus impairs normal growth and fruit set, especially when whiteflies remain active.",
+    "identification": [
+      "Leaf curl and yellowing in young growth",
+      "Whitefly pressure",
+      "Stunting and reduced fruit set"
+    ],
+    "similar_conditions": [
+      "Nutrient stress",
+      "Herbicide injury",
+      "Other virus symptoms"
+    ],
+    "monitoring": [
+      "Monitor whiteflies",
+      "Inspect new growth for yellowing and curling",
+      "Check transplants before planting"
+    ],
+    "natural_prevention": [
+      "Use clean transplants",
+      "Manage whitefly populations",
+      "Control weeds and alternative hosts",
+      "Use resistant varieties where suitable"
+    ],
+    "cultural_prevention": [
+      "Physical exclusion in protected crops",
+      "Crop hygiene",
+      "Prompt removal of severely diseased plants",
+      "Avoid introducing infected planting material"
+    ],
+    "management": [
+      "Use resistant varieties where suitable",
+      "Manage whiteflies",
+      "Use healthy transplants",
+      "Follow local extension recommendations for vector management"
+    ],
+    "what_to_avoid": [
+      "Ignoring whitefly populations",
+      "Introducing suspicious transplants",
+      "Leaving severely diseased plants in place"
+    ],
+    "when_to_seek_expert_help": "Seek local agricultural or extension advice when symptoms are widespread, when whitefly pressure is high, or when cultivar choice and vector management are uncertain.",
+    "important_note": "TYLCV is a virus disease, not a fungal leaf-spot disease, and whitefly management is central to control.",
+    "sources": [
+      "https://ipm.ucanr.edu/agriculture/tomato/tomato-yellow-leaf-curl/"
+    ]
+  },
+  "Tomato__Tomato_mosaic_virus": {
+    "crop": "Tomato",
+    "condition": "Tomato Mosaic Virus",
+    "disease_type": "Viral disease",
+    "causal_agent": "Tomato mosaic virus and related tobamoviruses",
+    "pathogen_group": "Virus",
+    "scientific_name": "Tobamovirus group; tomato mosaic virus",
+    "definition": "A viral disease that produces mottling, leaf deformation and sometimes fruit abnormalities, often spread by contaminated handling or infected seed and seedlings.",
+    "detailed_description": "Tomato mosaic virus can spread mechanically, which means workers, tools and plants can move the virus without insect vectors. The disease is stable and can persist on surfaces and in infected residues.",
+    "disease_triangle": {
+      "pathogen": "The virus persists on surfaces and in infected plant material and spreads by mechanical contact.",
+      "host": "Tomato plants are susceptible and the virus can establish quickly in newly infected tissue.",
+      "environment": "Human handling and contaminated equipment strongly influence spread, rather than purely weather conditions."
+    },
+    "why_it_occurs": "The virus is spread through contact and contaminated tools, so any handling that moves sap from infected plants to healthy tissues can cause new infections.",
+    "how_it_starts": "Initially infected plants or contaminated tools can transfer sap to healthy leaves, allowing the virus to establish.",
+    "disease_cycle": "Virus introduction -> infection of healthy tissues -> systemic spread in plant -> mosaic symptoms and possible fruit abnormalities -> continued spread through contaminated handling.",
+    "how_it_spreads": [
+      "Mechanical contact with infected plants.",
+      "Contaminated hands, tools and equipment.",
+      "Infected seedling or propagative material."
+    ],
+    "favorable_conditions": [
+      "Handling and contaminated surfaces",
+      "Infected planting material",
+      "Frequent crop operations"
+    ],
+    "unfavorable_conditions": [
+      "Good sanitation",
+      "Clean transplants",
+      "Reduced mechanical contact"
+    ],
+    "environmental_risk": "This disease is less about weather and more about contamination and crop handling; the biggest risk is movement of sap between plants or tools.",
+    "early_symptoms": [
+      "Mottled light and dark green foliage",
+      "Leaf distortion or deformation"
+    ],
+    "symptom_explanations": [
+      {
+        "symptom": "Mosaic pattern and leaf malformation",
+        "why_it_occurs": "The virus interferes with normal chlorophyll production and tissue formation.",
+        "when_it_occurs": "Symptoms appear after infection is established and the virus is systemic.",
+        "what_it_indicates": "The plant is infected and development is being disrupted."
+      }
+    ],
+    "leaf_symptoms": [
+      "Mosaic pattern",
+      "Leaf distortion",
+      "Fern-like or malformed leaves in severe cases"
+    ],
+    "leaf_symptom_explanations": [
+      {
+        "symptom": "Leaf distortion and mosaic pattern",
+        "why_it_occurs": "The virus disrupts normal cell development and pigment distribution, creating abnormal leaf shapes and color patterns.",
+        "when_it_occurs": "This occurs after systemic spread.",
+        "what_it_indicates": "The plant is affected by a systemic viral disorder."
+      }
+    ],
+    "stem_symptoms": [
+      "Not usually a major symptom."
+    ],
+    "fruit_symptoms": [
+      "Fruit may show abnormal patterns or reduced quality in some infections."
+    ],
+    "disease_progression": "Symptoms can remain on foliage and fruit over time, and the disease continues to affect plant vigor when the infected tissue is retained in the crop.",
+    "identification": [
+      "Mosaic pattern and leaf distortion",
+      "Mechanical spread history",
+      "Symptoms not limited to weather patterns"
+    ],
+    "similar_conditions": [
+      "Nutrient stress",
+      "Other tomato viruses",
+      "Herbicide injury"
+    ],
+    "monitoring": [
+      "Inspect new growth and leaf color patterns",
+      "Review sanitation and handling practices",
+      "Check transplants before planting"
+    ],
+    "natural_prevention": [
+      "Use disease-free seed or transplants",
+      "Maintain good sanitation",
+      "Remove visibly diseased plants when appropriate",
+      "Minimize mechanical spread"
+    ],
+    "cultural_prevention": [
+      "Disinfect tools and hands",
+      "Avoid washing healthy plants after handling infected ones without sanitation",
+      "Use resistant varieties where available",
+      "Plan crop operations to reduce spread"
+    ],
+    "management": [
+      "Use clean transplants",
+      "Sanitize tools and hands",
+      "Remove severely diseased plants according to local guidance",
+      "Follow local extension recommendations for disease management"
+    ],
+    "what_to_avoid": [
+      "Handling healthy plants after infected ones without cleaning",
+      "Reusing contaminated tools",
+      "Ignoring mosaic symptoms"
+    ],
+    "when_to_seek_expert_help": "Seek local agricultural advice when virus identification is uncertain, when the crop is heavily affected, or when management decisions depend on distinguishing virus symptoms from other disorders.",
+    "important_note": "This is a virus disease spread primarily by sap movement and contaminated handling rather than by weather alone.",
+    "sources": [
+      "https://ipm.ucanr.edu/agriculture/tomato/tobacco-mosaic/",
+      "https://extension.umn.edu/agriculture/specialty-crops/vegetable-farming/disease-management/tomato-viruses"
+    ]
+  },
+  "Tomato_healthy": {
+    "crop": "Tomato",
+    "condition": "Healthy Tomato Plant",
+    "disease_type": "Healthy model class",
+    "causal_agent": "No disease-causing organism detected by the model.",
+    "pathogen_group": "Not applicable",
+    "scientific_name": "Healthy tomato phenotype",
+    "definition": "The model classified this tomato image as healthy within the trained classes. This does not guarantee the entire plant is disease-free, but the uploaded image aligns with a healthy tomato leaf pattern.",
+    "detailed_description": "Healthy tomato tissue is typically green, structurally normal and without diagnostic disease lesions. The model result suggests that the uploaded image fits the healthy tomato examples in the training dataset.",
+    "disease_triangle": {
+      "pathogen": "No active disease signal is indicated for the analyzed image.",
+      "host": "The tomato plant appears to be in a healthy state.",
+      "environment": "The crop environment is not indicating disease pressure in the sample image."
+    },
+    "why_it_occurs": "No disease-specific symptom pattern was detected in the image, and the leaf structure is consistent with a healthy tomato plant.",
+    "how_it_starts": "A healthy plant has no pathogen-driven disease cycle visible in this image.",
+    "disease_cycle": "Not applicable for a healthy classification.",
+    "how_it_spreads": [
+      "No disease spread is indicated."
+    ],
+    "favorable_conditions": [
+      "Balanced water and nutrient management",
+      "Good airflow",
+      "Healthy plant growth",
+      "Routine scouting"
+    ],
+    "unfavorable_conditions": [
+      "Lesion development",
+      "Sudden yellowing",
+      "Wilting or deformity"
+    ],
+    "environmental_risk": "The main risk is missing a new symptom later if the crop is not monitored regularly.",
+    "early_symptoms": [
+      "No disease-specific symptoms were selected by the model."
+    ],
+    "symptom_explanations": [
+      {
+        "symptom": "Healthy green foliage",
+        "why_it_occurs": "The tomato leaf is functioning normally and the tissue is not showing a lesion pattern.",
+        "when_it_occurs": "This is consistent with a healthy crop state.",
+        "what_it_indicates": "There is no strong disease signal in the analyzed image."
+      }
+    ],
+    "leaf_symptoms": [
+      "No disease-specific symptoms were selected by the model."
+    ],
+    "leaf_symptom_explanations": [
+      {
+        "symptom": "No disease-specific symptoms were selected by the model.",
+        "why_it_occurs": "The observed morphology aligns with healthy tomato tissue.",
+        "when_it_occurs": "During normal development.",
+        "what_it_indicates": "The model did not detect a strong disease pattern."
+      }
+    ],
+    "stem_symptoms": [
+      "Not applicable for this healthy-class image."
+    ],
+    "fruit_symptoms": [
+      "Not applicable for this healthy-class image."
+    ],
+    "disease_progression": "No disease progression is indicated by the model for this image.",
+    "identification": [
+      "Normal green foliage",
+      "No disease lesion pattern",
+      "No obvious stress or pest damage in the image"
+    ],
+    "similar_conditions": [
+      "Water stress",
+      "Nutrient stress",
+      "Insect feeding patterns"
+    ],
+    "monitoring": [
+      "Continue routine crop scouting",
+      "Check for new disease symptoms after weather changes",
+      "Review irrigation and nutrition if signs appear"
+    ],
+    "natural_prevention": [
+      "Maintain good health and sanitation",
+      "Use healthy transplants",
+      "Monitor crop regularly"
+    ],
+    "cultural_prevention": [
+      "Keep irrigation and nutrition balanced",
+      "Maintain airflow",
+      "Remove weak or damaged tissue if observed"
+    ],
+    "management": [
+      "Continue standard crop care",
+      "Review crop records and scout frequently",
+      "Respond quickly to any new symptom"
+    ],
+    "what_to_avoid": [
+      "Ignoring new symptoms simply because one image was classified as healthy"
+    ],
+    "when_to_seek_expert_help": "Seek advice if any new lesions, yellowing, curling or wilting develop after this image was taken.",
+    "important_note": "No disease was detected by the model for this class, and the result is limited to the trained model and the uploaded image.",
+    "sources": []
+  }
+}

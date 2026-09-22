@@ -14,11 +14,18 @@ import pandas as pd
 import torch
 from PIL import Image, ImageDraw
 
-from ood_detector import (
-    load_model,
-    get_feature_extractor,
-    classify_with_ood,
-)
+try:
+    from .ood_detector import (
+        load_model,
+        get_feature_extractor,
+        classify_with_ood,
+    )
+except ImportError:  # pragma: no cover - support direct script execution
+    from src.classification.ood_detector import (
+        load_model,
+        get_feature_extractor,
+        classify_with_ood,
+    )
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
