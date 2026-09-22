@@ -1,2 +1,15 @@
+streamlit
+torch
+torchvision
 opencv-python-headless
+Pillow
+numpy
+pandas
+scikit-learn
+scipy
+matplotlib
+grad-cam
 reportlab
+requests
+tqdm
+scikit-image
